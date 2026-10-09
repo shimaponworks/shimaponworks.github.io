@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>クラウド勤怠管理 Clocca（クロッカ）｜月末の勤怠集計を20時間から2時間へ</title>
+  <meta name="description" content="中小企業のためのクラウド勤怠管理「Clocca」。スマホ・PCでの打刻から、残業アラート、有給の自動管理、給与ソフトへのデータ出力まで。初期費用0円、30日間無料でお試しいただけます。">
+  <!-- ポートフォリオ用の架空サイトのため、検索結果に出さない -->
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="クラウド勤怠管理 Clocca｜月末の勤怠集計を20時間から2時間へ">
+  <meta property="og:description" content="打刻・残業・有給をひとつの画面で。初期費用0円、30日間無料。">
+  <meta property="og:url" content="https://shimaponworks.github.io/clocca/">
+  <meta property="og:image" content="https://shimaponworks.github.io/clocca/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Webフォントは使わない（端末のゴシック体のみ）。表示速度を優先 -->
+  <link rel="stylesheet" href="css/style.css?v=20261008c">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- アイコン（各所で <use href="#i-◯◯"> として使い回す） -->
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10"/></g></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 5.5A2 2 0 0 1 7 3.5h12v15H7a2 2 0 0 0-2 2zM5 20.5v-15M9 8h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></g></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13.5h2M14 13.5h2M8 16.5h2"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 19.5a6.5 6.5 0 0 1 13 0M16 5a3.5 3.5 0 0 1 0 7M18 14.5a5.5 5.5 0 0 1 3.5 5"/></g></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5H7a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.5z"/><path d="M14 3.5v5h5M9 14.5h6M12 11.5v6"/></g></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 20h10M5 7h14M5 7l-2.5 6a2.5 2.5 0 0 0 5 0zM19 7l-2.5 6a2.5 2.5 0 0 0 5 0z"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6zM8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-backup" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6M5 12v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"/></g></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01"/></g></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20.5V5.5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v15M15 9.5h4a1 1 0 0 1 1 1v10M3 20.5h18M8 8.5h3M8 12.5h3M8 16.5h3"/></g></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="#top" aria-label="Clocca トップへ">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f5be0"/><circle cx="16" cy="16" r="9" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M16 11v5.5l3.5 2" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span class="logo__text">Clocca</span>
+      </a>
+      <button class="header__toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="global-nav" aria-label="ページ内メニュー">
+        <ul class="header__list">
+          <li><a href="#features">機能</a></li>
+          <li><a href="#case">導入事例</a></li>
+          <li><a href="#price">料金</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+        <div class="header__buttons">
+          <a class="btn btn--outline btn--sm" href="#form">無料で試す</a>
+          <a class="btn btn--primary btn--sm" href="#form">資料請求</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== ファーストビュー ===== -->
+    <section class="fv">
+      <div class="fv__inner container">
+        <div class="fv__body">
+          <p class="fv__label">中小企業のための クラウド勤怠管理</p>
+          <h1 class="fv__title">月末の勤怠集計を、<br><span class="fv__em"><span class="num">20</span>時間から<span class="num">2</span>時間へ。</span></h1>
+          <p class="fv__lead">打刻・残業・有給を、ひとつの画面で。<br>Excelやタイムカードから、<br class="sp-only">今日から乗り換えられます。</p>
+          <ul class="fv__points">
+            <li><svg class="icon"><use href="#i-check"/></svg>初期費用 0円</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>最短即日で利用開始</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>30日間無料</li>
+          </ul>
+          <div class="fv__buttons">
+            <a class="btn btn--primary btn--lg" href="#form"><svg class="icon"><use href="#i-download"/></svg>無料で資料をダウンロード</a>
+            <a class="btn btn--outline btn--lg" href="#form">30日間無料で試す</a>
+          </div>
+          <p class="fv__note">※集計時間は導入企業の平均（架空のサンプルデータです）</p>
+        </div>
+
+        <!-- 管理画面のイメージ（HTML/CSSで作成） -->
+        <div class="fv__visual">
+          <div class="mock" role="img" aria-label="Cloccaの管理画面のイメージ。今月の総労働時間・平均残業時間・有給取得率と、日別の出勤人数のグラフ、従業員ごとの出勤状況が表示されている">
+            <div class="mock__bar"><span></span><span></span><span></span><p>app.clocca.example/dashboard</p></div>
+            <div class="mock__body">
+              <div class="mock__side">
+                <p class="is-active">ダッシュボード</p>
+                <p>打刻一覧</p>
+                <p>残業管理</p>
+                <p>有給管理</p>
+                <p>シフト</p>
+                <p>設定</p>
+              </div>
+              <div class="mock__main">
+                <p class="mock__title">2026年10月の勤怠サマリー</p>
+                <div class="mock__kpis">
+                  <div><p>総労働時間</p><p class="mock__value">3,248<small>h</small></p></div>
+                  <div><p>平均残業</p><p class="mock__value">12.4<small>h</small></p></div>
+                  <div><p>有給取得率</p><p class="mock__value">72<small>%</small></p></div>
+                </div>
+                <div class="mock__chart">
+                  <p>日別の出勤人数</p>
+                  <div class="mock__bars">
+                    <span style="--h: 62%"></span><span style="--h: 78%"></span><span style="--h: 70%"></span><span style="--h: 88%"></span><span style="--h: 82%"></span><span style="--h: 40%"></span><span style="--h: 28%"></span>
+                  </div>
+                </div>
+                <div class="mock__list">
+                  <p><span>山田 さくら</span><span class="badge badge--green">出勤中</span><span>09:02</span></p>
+                  <p><span>佐藤 健太</span><span class="badge badge--orange">休憩中</span><span>08:55</span></p>
+                  <p><span>鈴木 美咲</span><span class="badge badge--gray">退勤済</span><span>07:58</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone" aria-hidden="true">
+            <p class="phone__date">10月8日（水）</p>
+            <p class="phone__time">09:00</p>
+            <p class="phone__btn">出勤</p>
+            <p class="phone__toast"><svg class="icon"><use href="#i-check"/></svg>打刻しました</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 導入企業 ===== -->
+    <section class="logos" aria-labelledby="logos-title">
+      <div class="container">
+        <p class="logos__title" id="logos-title">さまざまな業種の<br class="sp-only"> <strong class="num">1,200</strong> 社以上で導入されています</p>
+        <ul class="logos__list">
+          <li class="logos__item logos__item--serif">Minato Foods</li>
+          <li class="logos__item">AOBA<span>accounting</span></li>
+          <li class="logos__item logos__item--wide">KITAHAMA LOGI</li>
+          <li class="logos__item logos__item--round">hinata clinic</li>
+          <li class="logos__item logos__item--serif">Sorano Kensetsu</li>
+          <li class="logos__item">TSUBAKI<span>design</span></li>
+        </ul>
+        <p class="note note--center">※社名・導入社数はすべて架空です</p>
+      </div>
+    </section>
+
+    <!-- ===== 課題 ===== -->
+    <section class="section problem" id="problem">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Problem</p>
+          <h2 class="heading__ja">こんな勤怠管理、<br class="sp-only">続けていませんか？</h2>
+        </div>
+        <ul class="problem__list">
+          <li class="problem__item js-fade">
+            <span class="problem__icon"><svg class="icon"><use href="#i-table"/></svg></span>
+            <h3 class="problem__title">月末の集計に<br>まる2日かかる</h3>
+            <p class="problem__text">タイムカードやExcelを見ながら、手作業で集計。入力ミスの確認にも時間がかかります。</p>
+          </li>
+          <li class="problem__item js-fade">
+            <span class="problem__icon"><svg class="icon"><use href="#i-clock"/></svg></span>
+            <h3 class="problem__title">残業の上限超えに<br>あとから気づく</h3>
+            <p class="problem__text">月末に集計して初めて、上限を超えていたことが分かる。対策が後手に回ってしまいます。</p>
+          </li>
+          <li class="problem__item js-fade">
+            <span class="problem__icon"><svg class="icon"><use href="#i-book"/></svg></span>
+            <h3 class="problem__title">法改正のたびに<br>管理表を作り直す</h3>
+            <p class="problem__text">有給の取得義務や残業規制など、ルールが変わるたびに表を自分で直す必要があります。</p>
+          </li>
+        </ul>
+        <p class="problem__answer js-fade">Cloccaなら、<strong>勤怠の集計から法改正への対応まで</strong>、<br class="pc-only">クラウドで自動化できます。</p>
+      </div>
+    </section>
+
+    <!-- ===== 導入効果 ===== -->
+    <section class="result" aria-labelledby="result-title">
+      <div class="container">
+        <h2 class="result__title" id="result-title">導入企業の成果</h2>
+        <ul class="result__list">
+          <li class="result__item">
+            <p class="result__label">月末の集計時間</p>
+            <p class="result__value"><span class="num" data-count="90">90</span><small>%削減</small></p>
+          </li>
+          <li class="result__item">
+            <p class="result__label">継続利用率</p>
+            <p class="result__value"><span class="num" data-count="98">98</span><small>%</small></p>
+          </li>
+          <li class="result__item">
+            <p class="result__label">導入までの平均日数</p>
+            <p class="result__value"><span class="num" data-count="7">7</span><small>日</small></p>
+          </li>
+        </ul>
+        <p class="result__note">※数値はすべて架空のサンプルデータです</p>
+      </div>
+    </section>
+
+    <!-- ===== 機能 ===== -->
+    <section class="section features" id="features">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Features</p>
+          <h2 class="heading__ja">勤怠管理に必要な機能が、<br class="sp-only">すべてそろっています</h2>
+        </div>
+
+        <ul class="features__list">
+          <li class="feature js-fade">
+            <span class="feature__icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+            <h3 class="feature__title">PC・スマホ・ICカードで打刻</h3>
+            <p class="feature__text">オフィスでも、テレワークでも、直行直帰でも。位置情報つきでスマホから打刻できます。</p>
+          </li>
+          <li class="feature js-fade">
+            <span class="feature__icon"><svg class="icon"><use href="#i-bell"/></svg></span>
+            <h3 class="feature__title">残業アラート</h3>
+            <p class="feature__text">残業時間が上限に近づくと、本人と管理者に自動でお知らせします。</p>
+          </li>
+          <li class="feature js-fade">
+            <span class="feature__icon"><svg class="icon"><use href="#i-calendar"/></svg></span>
+            <h3 class="feature__title">有給の自動付与・管理</h3>
+            <p class="feature__text">入社日から付与日数を自動で計算。年5日の取得義務の達成状況もひと目で分かります。</p>
+          </li>
+          <li class="feature js-fade">
+            <span class="feature__icon"><svg class="icon"><use href="#i-users"/></svg></span>
+            <h3 class="feature__title">シフト管理</h3>
+            <p class="feature__text">店舗や工場のシフトを、ドラッグ操作で作成。スタッフはスマホで確認できます。</p>
+          </li>
+          <li class="feature js-fade">
+            <span class="feature__icon"><svg class="icon"><use href="#i-export"/></svg></span>
+            <h3 class="feature__title">給与ソフトへのデータ出力</h3>
+            <p class="feature__text">集計結果を、主要な給与計算ソフトに合わせた形式でCSV出力できます。</p>
+          </li>
+          <li class="feature js-fade">
+            <span class="feature__icon"><svg class="icon"><use href="#i-scale"/></svg></span>
+            <h3 class="feature__title">法改正への自動対応</h3>
+            <p class="feature__text">労働基準法などの改正に合わせて、システムを自動でアップデートします。</p>
+          </li>
+        </ul>
+
+        <!-- 機能の詳しい紹介 -->
+        <div class="detail js-fade">
+          <div class="detail__body">
+            <p class="detail__label">Point 01</p>
+            <h3 class="detail__title">残業の「上限超え」を、<br>起きる前に防ぐ</h3>
+            <p>月の残業時間が設定した基準（たとえば30時間）に近づくと、本人と上司にメールとアプリで通知。月末を待たずに、業務の調整ができます。</p>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#i-check"/></svg>基準の時間は部署ごとに設定できる</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>36協定の上限に合わせた設定も可能</li>
+            </ul>
+          </div>
+          <div class="detail__visual" role="img" aria-label="残業アラートの通知のイメージ。今月の残業が28時間になり、基準の30時間に近づいていることを知らせている">
+            <div class="alert-mock">
+              <p class="alert-mock__head"><svg class="icon"><use href="#i-bell"/></svg>残業アラート</p>
+              <p class="alert-mock__text">佐藤 健太さんの今月の残業が <strong>28時間</strong> になりました。基準の30時間に近づいています。</p>
+              <div class="alert-mock__meter"><span style="--w: 93%"></span></div>
+              <p class="alert-mock__scale"><span>0h</span><span>基準 30h</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail detail--reverse js-fade">
+          <div class="detail__body">
+            <p class="detail__label">Point 02</p>
+            <h3 class="detail__title">スマホひとつで、<br>どこからでも打刻</h3>
+            <p>専用アプリやブラウザから、ワンタップで打刻。位置情報も記録されるので、直行直帰やテレワークでも、正確な勤務時間を把握できます。</p>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#i-check"/></svg>アプリのインストールは不要（ブラウザでも利用可）</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>打刻できる場所を限定する設定も可能</li>
+            </ul>
+          </div>
+          <div class="detail__visual" role="img" aria-label="スマートフォンでの打刻画面のイメージ。出勤ボタンと、記録された位置情報が表示されている">
+            <div class="phone phone--large">
+              <p class="phone__date">10月8日（水）</p>
+              <p class="phone__time">09:00</p>
+              <p class="phone__btn">出勤</p>
+              <ul class="phone__log">
+                <li><span>出勤</span><span class="num">09:00</span></li>
+                <li><span>休憩</span><span>ー</span></li>
+                <li><span>退勤</span><span>ー</span></li>
+              </ul>
+              <p class="phone__place">東京都千代田区 付近で記録</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 比較表 ===== -->
+    <section class="section section--alt compare" id="compare">
+      <div class="container container--narrow">
+        <div class="heading js-fade">
+          <p class="heading__en">Comparison</p>
+          <h2 class="heading__ja">Excel・タイムカードとの違い</h2>
+        </div>
+        <div class="compare__wrap js-fade">
+          <table class="compare__table">
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Excel・<br class="sp-only">タイムカード</th>
+                <th scope="col" class="is-clocca">Clocca</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">月末の集計</th>
+                <td><span class="mark mark--bad" aria-hidden="true">△</span><span>手作業で</span><span>2〜3日</span></td>
+                <td class="is-clocca"><span class="mark mark--good" aria-hidden="true">◎</span><span>自動で集計</span></td>
+              </tr>
+              <tr>
+                <th scope="row">残業の把握</th>
+                <td><span class="mark mark--bad" aria-hidden="true">△</span><span>月末まで</span><span>分からない</span></td>
+                <td class="is-clocca"><span class="mark mark--good" aria-hidden="true">◎</span><span>上限が</span><span>近づくと通知</span></td>
+              </tr>
+              <tr>
+                <th scope="row">有給の管理</th>
+                <td><span class="mark mark--bad" aria-hidden="true">△</span><span>台帳を</span><span>手で更新</span></td>
+                <td class="is-clocca"><span class="mark mark--good" aria-hidden="true">◎</span><span>付与・取得を</span><span>自動管理</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span>法改正への</span><span>対応</span></th>
+                <td><span class="mark mark--bad" aria-hidden="true">×</span><span>自分で表を</span><span>作り直す</span></td>
+                <td class="is-clocca"><span class="mark mark--good" aria-hidden="true">◎</span><span>自動で</span><span>アップデート</span></td>
+              </tr>
+              <tr>
+                <th scope="row">テレワーク</th>
+                <td><span class="mark mark--bad" aria-hidden="true">×</span><span>打刻</span><span>できない</span></td>
+                <td class="is-clocca"><span class="mark mark--good" aria-hidden="true">◎</span><span>スマホで打刻</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 導入事例 ===== -->
+    <section class="section case" id="case">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Case Study</p>
+          <h2 class="heading__ja">導入事例</h2>
+        </div>
+        <div class="case__list">
+          <article class="case-card js-fade">
+            <div class="case-card__head">
+              <span class="case-card__icon"><svg class="icon"><use href="#i-building"/></svg></span>
+              <div>
+                <p class="case-card__company">株式会社ミナトフーズ</p>
+                <p class="case-card__meta">食品製造業｜従業員 120名｜3拠点</p>
+              </div>
+            </div>
+            <h3 class="case-card__title">3拠点のタイムカードを、<br>ひとつの画面で管理できるように</h3>
+            <div class="case-card__result">
+              <p>月末の集計時間</p>
+              <p class="case-card__numbers"><span class="before"><span class="num">24</span>時間</span><svg class="icon"><use href="#i-arrow"/></svg><span class="after"><span class="num">3</span>時間</span></p>
+            </div>
+            <blockquote class="case-card__quote">
+              <p>工場と事務所でバラバラだった勤怠が、1つの画面で見られるようになりました。月末に残業していた総務の負担が、大きく減っています。</p>
+              <cite>総務部 Tさま</cite>
+            </blockquote>
+          </article>
+          <article class="case-card js-fade">
+            <div class="case-card__head">
+              <span class="case-card__icon"><svg class="icon"><use href="#i-building"/></svg></span>
+              <div>
+                <p class="case-card__company">あおば会計事務所</p>
+                <p class="case-card__meta">会計事務所｜従業員 18名</p>
+              </div>
+            </div>
+            <h3 class="case-card__title">繁忙期の残業を、<br>月の途中で調整できるように</h3>
+            <div class="case-card__result">
+              <p>残業上限を超えた件数（年間）</p>
+              <p class="case-card__numbers"><span class="before"><span class="num">5</span>件</span><svg class="icon"><use href="#i-arrow"/></svg><span class="after"><span class="num">0</span>件</span></p>
+            </div>
+            <blockquote class="case-card__quote">
+              <p>確定申告の時期は、どうしても残業が増えます。アラートのおかげで、上限に近い人の仕事を早めに振り分けられるようになりました。</p>
+              <cite>所長 Aさま</cite>
+            </blockquote>
+          </article>
+        </div>
+        <p class="note note--center">※事例はすべて架空のものです</p>
+      </div>
+    </section>
+
+    <!-- ===== 中間CTA ===== -->
+    <section class="cta-band" aria-label="資料請求のご案内">
+      <div class="container cta-band__inner">
+        <div>
+          <p class="cta-band__title">まずは資料で、機能と料金を<br class="sp-only">くわしくご確認ください</p>
+          <p class="cta-band__text">導入事例や、他社サービスとの比較表も掲載しています。</p>
+        </div>
+        <a class="btn btn--white btn--lg" href="#form"><svg class="icon"><use href="#i-download"/></svg>無料で資料をダウンロード</a>
+      </div>
+    </section>
+
+    <!-- ===== 料金 ===== -->
+    <section class="section section--alt price" id="price">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Pricing</p>
+          <h2 class="heading__ja">料金プラン</h2>
+          <p class="heading__lead">初期費用 0円。1名から、必要な人数分だけご利用いただけます。</p>
+        </div>
+
+        <ul class="price__list">
+          <li class="plan js-fade">
+            <h3 class="plan__name">ライト</h3>
+            <p class="plan__target">まずは打刻と集計を自動化したい</p>
+            <p class="plan__price"><span class="num">200</span><span class="plan__unit">円／人・月</span></p>
+            <ul class="plan__features">
+              <li><svg class="icon"><use href="#i-check"/></svg>PC・スマホ・ICカード打刻</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>勤怠の自動集計</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>CSV出力</li>
+            </ul>
+          </li>
+          <li class="plan plan--featured js-fade">
+            <p class="plan__badge">いちばん人気</p>
+            <h3 class="plan__name">スタンダード</h3>
+            <p class="plan__target">残業・有給の管理までまとめて</p>
+            <p class="plan__price"><span class="num">300</span><span class="plan__unit">円／人・月</span></p>
+            <ul class="plan__features">
+              <li><svg class="icon"><use href="#i-check"/></svg>ライトプランのすべて</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>残業アラート</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>有給の自動付与・管理</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>シフト管理</li>
+            </ul>
+          </li>
+          <li class="plan js-fade">
+            <h3 class="plan__name">プロ</h3>
+            <p class="plan__target">複数拠点・給与連携が必要な企業に</p>
+            <p class="plan__price"><span class="num">450</span><span class="plan__unit">円／人・月</span></p>
+            <ul class="plan__features">
+              <li><svg class="icon"><use href="#i-check"/></svg>スタンダードプランのすべて</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>給与計算ソフトとの自動連携</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>複数拠点の一括管理</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>専任スタッフによるサポート</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="note note--center">※価格はすべて税抜です。最低利用料金は月額3,000円です。<br>※「いちばん人気」は架空のサンプル表記です。</p>
+      </div>
+    </section>
+
+    <!-- ===== 導入の流れ ===== -->
+    <section class="section flow" id="flow">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Flow</p>
+          <h2 class="heading__ja">導入の流れ</h2>
+          <p class="heading__lead">お申し込みから、<strong>最短即日</strong>でご利用いただけます。</p>
+        </div>
+        <ol class="flow__list">
+          <li class="flow__item js-fade">
+            <span class="flow__num num">01</span>
+            <h3 class="flow__title">資料請求・お問い合わせ</h3>
+            <p class="flow__text">フォームから、30秒で完了します。</p>
+          </li>
+          <li class="flow__item js-fade">
+            <span class="flow__num num">02</span>
+            <h3 class="flow__title">30日間の無料トライアル</h3>
+            <p class="flow__text">すべての機能を、実際の業務でお試しいただけます。</p>
+          </li>
+          <li class="flow__item js-fade">
+            <span class="flow__num num">03</span>
+            <h3 class="flow__title">初期設定のサポート</h3>
+            <p class="flow__text">担当者がオンラインで、就業規則に合わせた設定をお手伝いします。</p>
+          </li>
+          <li class="flow__item js-fade">
+            <span class="flow__num num">04</span>
+            <h3 class="flow__title">本格運用スタート</h3>
+            <p class="flow__text">導入後も、チャットと電話でサポートします。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== セキュリティ・サポート ===== -->
+    <section class="section section--alt support" aria-labelledby="support-title">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Security &amp; Support</p>
+          <h2 class="heading__ja" id="support-title">安心してお使いいただくために</h2>
+        </div>
+        <ul class="support__list">
+          <li class="support__item js-fade"><svg class="icon"><use href="#i-shield"/></svg><h3>通信の暗号化</h3><p>すべての通信をSSL/TLSで暗号化しています。</p></li>
+          <li class="support__item js-fade"><svg class="icon"><use href="#i-backup"/></svg><h3>毎日の自動バックアップ</h3><p>データは毎日、別の場所に自動で保存されます。</p></li>
+          <li class="support__item js-fade"><svg class="icon"><use href="#i-server"/></svg><h3>国内のデータセンター</h3><p>データは日本国内のサーバーで管理しています。</p></li>
+          <li class="support__item js-fade"><svg class="icon"><use href="#i-support"/></svg><h3>チャット・電話サポート</h3><p>平日9:00〜18:00、専任スタッフが対応します。</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section faq-section" id="faq">
+      <div class="container container--narrow">
+        <div class="heading js-fade">
+          <p class="heading__en">FAQ</p>
+          <h2 class="heading__ja">よくあるご質問</h2>
+        </div>
+        <div class="faq__list js-fade">
+          <details class="faq">
+            <summary class="faq__q">無料トライアルのあと、自動で有料になりますか？</summary>
+            <div class="faq__a"><p>いいえ、自動で有料プランに切り替わることはありません。継続をご希望の場合のみ、お手続きをお願いしています。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">何名から利用できますか？</summary>
+            <div class="faq__a"><p>1名からご利用いただけます。料金は利用人数分のみで、最低利用料金は月額3,000円（税抜）です。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">今のタイムカードやExcelのデータは移行できますか？</summary>
+            <div class="faq__a"><p>はい。CSV形式で取り込めます。データの形式が分からない場合も、サポート担当が移行をお手伝いします。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">給与計算ソフトと連携できますか？</summary>
+            <div class="faq__a"><p>すべてのプランで、主要な給与計算ソフトに合わせた形式のCSVを出力できます。プロプランでは自動連携にも対応しています。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">導入まで、どのくらいかかりますか？</summary>
+            <div class="faq__a"><p>最短で、お申し込みの当日からご利用いただけます。就業規則に合わせた設定を含めても、平均1週間ほどです。</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 資料請求フォーム ===== -->
+    <section class="section request" id="form">
+      <div class="container request__inner">
+        <div class="request__info js-fade">
+          <p class="heading__en heading__en--left">Download</p>
+          <h2 class="request__title">サービス紹介資料を<br>無料でダウンロード</h2>
+          <div class="doc-mock" aria-hidden="true">
+            <div class="doc-mock__page doc-mock__page--back"></div>
+            <div class="doc-mock__page">
+              <svg class="logo__mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#1f5be0"/><circle cx="16" cy="16" r="9" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M16 11v5.5l3.5 2" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+              <p class="doc-mock__title">クラウド勤怠管理 Clocca<br>サービス紹介資料</p>
+              <span class="doc-mock__line"></span><span class="doc-mock__line doc-mock__line--short"></span>
+            </div>
+          </div>
+          <p class="request__lead">資料でわかること</p>
+          <ul class="check-list">
+            <li><svg class="icon"><use href="#i-check"/></svg>機能の詳細と画面イメージ</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>料金プランとお見積りの例</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>業種別の導入事例</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>導入までのスケジュール</li>
+          </ul>
+        </div>
+
+        <!-- デモ用フォーム：送信処理はせず、入力内容はどこにも送らない -->
+        <form class="form js-fade" method="post" action="#form" novalidate>
+          <p class="form__demo">デモのため、入力内容は送信されません</p>
+          <div class="form__row">
+            <label for="f-company">会社名<span class="form__req">必須</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" required placeholder="例：株式会社サンプル">
+          </div>
+          <div class="form__row">
+            <label for="f-name">お名前<span class="form__req">必須</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="例：山田 太郎">
+          </div>
+          <div class="form__row">
+            <label for="f-email">メールアドレス<span class="form__req">必須</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="例：yamada@example.com">
+          </div>
+          <div class="form__row">
+            <label for="f-tel">電話番号<span class="form__opt">任意</span></label>
+            <input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="例：03-0000-0000">
+          </div>
+          <div class="form__row">
+            <label for="f-size">従業員数<span class="form__req">必須</span></label>
+            <select id="f-size" name="size" required>
+              <option value="">選択してください</option>
+              <option>1〜9名</option>
+              <option>10〜49名</option>
+              <option>50〜99名</option>
+              <option>100〜299名</option>
+              <option>300名以上</option>
+            </select>
+          </div>
+          <div class="form__agree">
+            <input id="f-agree" name="agree" type="checkbox" required>
+            <label for="f-agree">個人情報の取り扱いに同意する</label>
+          </div>
+          <p class="form__error" role="alert" hidden>未入力の項目があります。赤い枠の項目をご確認ください。</p>
+          <button class="btn btn--primary btn--lg btn--block" type="submit"><svg class="icon"><use href="#i-download"/></svg>無料で資料をダウンロード</button>
+          <p class="form__note">30秒で完了します。営業電話はいたしません。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="logo logo--white" href="#top" aria-label="Clocca トップへ">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f5be0"/><circle cx="16" cy="16" r="9" fill="none" stroke="#fff" stroke-width="2.5"/><path d="M16 11v5.5l3.5 2" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span class="logo__text">Clocca</span>
+      </a>
+      <ul class="footer__links">
+        <li><a href="#features">機能</a></li>
+        <li><a href="#case">導入事例</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#form">資料請求</a></li>
+      </ul>
+      <p class="footer__note">※このページはポートフォリオ用に制作した架空のサービスのLPです。<br class="pc-only">サービス名・会社名・導入企業・数値・お客様の声は、すべて架空のものです。</p>
+      <small class="footer__copy">&copy; Clocca</small>
+    </div>
+  </footer>
+
+  <!-- スマホ用 追従ボタン -->
+  <div class="fixed-cta" aria-hidden="true">
+    <a class="btn btn--outline" href="#form" tabindex="-1">無料で試す</a>
+    <a class="btn btn--primary" href="#form" tabindex="-1">資料請求</a>
+  </div>
+
+  <!-- デモ用の通知 -->
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js?v=20261008c" defer></script>
+</body>
+</html>

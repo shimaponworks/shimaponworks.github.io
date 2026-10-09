@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>楽天市場 商品ページ制作サンプル｜国産フルーツジュレ（架空の商品）</title>
+  <meta name="description" content="楽天市場向けの商品ページ制作サンプル。スマホ用の縦長LP画像10枚、商品画像3枚、楽天にそのまま貼れるHTMLまで制作しました（架空の商品）。">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="楽天市場 商品ページ制作サンプル｜国産フルーツジュレ">
+  <meta property="og:description" content="スマホ用LP画像10枚・商品画像3枚・楽天用HTML（架空の商品のサンプル）">
+  <meta property="og:url" content="https://shimaponworks.github.io/koharu/">
+  <meta property="og:image" content="https://shimaponworks.github.io/koharu/output/thumb-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='18' r='12' fill='%23e8743b'/%3E%3Cpath d='M16 6c2-4 6-4 8-3-2 3-5 4-8 3z' fill='%232f5d50'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css?v=20261008">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="hero__label">楽天市場 商品ページ 制作サンプル</p>
+      <h1 class="hero__title">果実ごろっと<br>国産フルーツジュレ</h1>
+      <p class="hero__lead">お歳暮・クリスマス向けの食品ギフトを想定した、楽天市場の商品ページです。<br>スマホ用の縦長LP画像から、商品画像、楽天にそのまま貼れるHTMLまで制作しました。</p>
+      <ul class="hero__chips">
+        <li>スマホ用LP画像 <strong>10枚</strong></li>
+        <li>商品画像 <strong>3枚</strong></li>
+        <li>楽天用HTML・登録テキスト</li>
+      </ul>
+      <p class="hero__note">※ポートフォリオ用に制作した架空の商品です。商品写真は画像生成AIで作成しています。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="thumbs-title">
+      <div class="container">
+        <h2 class="section__title" id="thumbs-title">商品画像（1200×1200）</h2>
+        <ul class="thumbs">
+          <li>
+            <img src="output/thumb-01.jpg" width="1200" height="1200" alt="果実ごろっと 国産フルーツジュレ 8個入り ギフトボックス 送料無料">
+            <p><strong>1枚目</strong>：楽天の商品画像登録ガイドラインに準拠（文字は面積の20%以内・枠線なし・写真背景）</p>
+          </li>
+          <li>
+            <img src="output/thumb-02.jpg" width="1200" height="1200" alt="4つの味を2個ずつ。白桃・マスカット・温州みかん・いちご" loading="lazy">
+            <p><strong>2枚目</strong>：4つの味が一覧で分かる構成</p>
+          </li>
+          <li>
+            <img src="output/thumb-03.jpg" width="1200" height="1200" alt="ギフト対応無料。のし・包装・メッセージカード・手提げ袋" loading="lazy">
+            <p><strong>3枚目</strong>：ギフト需要に向けて、無料の対応を訴求</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="lp-title">
+      <div class="container lp">
+        <div class="lp__info">
+          <h2 class="section__title section__title--left" id="lp-title">スマホ用 商品ページ</h2>
+          <p class="lp__lead">右（スマホでは下）が、楽天のスマホ画面で表示される縦長の商品ページです。</p>
+
+          <h3 class="lp__h">制作のポイント</h3>
+          <ul class="lp__list">
+            <li>お歳暮・クリスマスの「贈る人」に向けて、ギフト対応（のし・包装・カード・手提げ袋）を大きく訴求</li>
+            <li>スマホでは画像が約半分の大きさで表示されるため、本文は28px以上で作成し、小さな画面でも読める文字サイズに</li>
+            <li>原材料・アレルギー・賞味期限などの食品表示を省略せず、画像とテキストの両方に掲載</li>
+            <li>作ったレビュー（お客様の声）は載せない（ステルスマーケティング規制・景品表示法への配慮）</li>
+          </ul>
+
+          <h3 class="lp__h">楽天の仕様への対応</h3>
+          <table class="lp__spec">
+            <tr><th>画像の枚数</th><td>10枚（スマホ用商品説明文の上限 20枚以内）</td></tr>
+            <tr><th>画像の幅</th><td>1080px（高さは各3840px以内）</td></tr>
+            <tr><th>1枚の容量</th><td>86〜198KB（目安の200KB以内／合計 約1.3MB）</td></tr>
+            <tr><th>HTML</th><td>スマホ用は img タグのみ（CSS・div を使わない）</td></tr>
+          </table>
+
+          <h3 class="lp__h">制作の流れ</h3>
+          <ol class="lp__steps">
+            <li>デザインを HTML/CSS で作成（修正が速く、文言の差し替えも簡単）</li>
+            <li>セクションごとに画像として自動で書き出し、容量を自動で調整</li>
+            <li>楽天にそのまま貼れる HTML と、検索用のテキストを用意</li>
+          </ol>
+
+          <details class="lp__code">
+            <summary>楽天用HTML（スマホ用商品説明文）の例</summary>
+            <pre><code>&lt;img src="https://image.rakuten.co.jp/SHOP_ID/cabinet/sp-01.jpg" width="100%" alt="…"&gt;
+&lt;img src="https://image.rakuten.co.jp/SHOP_ID/cabinet/sp-02.jpg" width="100%" alt="…"&gt;
+…（全10行）</code></pre>
+          </details>
+        </div>
+
+        <div class="lp__phone">
+          <div class="phone">
+            <img src="output/sp-01.jpg" width="1080" height="2544" alt="果実ごろっと 国産フルーツジュレ 8個入り。果実を、ほおばるジュレ。3,980円（税込）送料無料。のし・包装・メッセージカード無料">
+            <img src="output/sp-02.jpg" width="1080" height="2066" alt="今年のお歳暮は、果実の贈りものを。甘いものが苦手な方にも喜ばれる、果物そのままのやさしい甘さです" loading="lazy">
+            <img src="output/sp-03.jpg" width="1080" height="1932" alt="こだわり1 果肉が主役のジュレ。ひとくちごとに、果肉がごろっと入っています" loading="lazy">
+            <img src="output/sp-04.jpg" width="1080" height="1902" alt="こだわり2 旬の国産フルーツだけを使用。国内の契約農家から、いちばんおいしい時期の果物を仕入れています" loading="lazy">
+            <img src="output/sp-05.jpg" width="1080" height="1896" alt="4つの味。白桃：とろける甘さ。マスカット：さわやかな香り。温州みかん：ほどよい酸味。いちご：甘ずっぱさ" loading="lazy">
+            <img src="output/sp-06.jpg" width="1080" height="1411" alt="おすすめの食べ方。冷蔵庫で2時間ほど冷やしてそのまま。冷凍庫で凍らせればシャーベットに" loading="lazy">
+            <img src="output/sp-07.jpg" width="1080" height="1833" alt="ギフト対応はすべて無料。のし（お歳暮・御礼・内祝いなど）、包装、メッセージカード、手提げ袋。ご注文時に選べます" loading="lazy">
+            <img src="output/sp-08.jpg" width="1080" height="1755" alt="よくある質問。賞味期限は製造日から90日。お届け日の指定ができます。のしの名入れができます。領収書を発行できます" loading="lazy">
+            <img src="output/sp-09.jpg" width="1080" height="1614" alt="商品情報。名称：ゼリー。原材料名：果実（白桃、マスカット、温州みかん、いちご）、砂糖、果汁、ゲル化剤（増粘多糖類）、酸味料。内容量：8個（1個あたり果実ジュレ110g）。賞味期限：製造日から90日。保存方法：直射日光・高温多湿を避け、常温で保存。アレルギー：もも。製造者：果実工房こはる（架空）" loading="lazy">
+            <img src="output/sp-10.jpg" width="1080" height="1094" alt="大切な方へ、果実のひとさじを。果実工房こはる" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>※このページはポートフォリオ用に制作した架空の商品の見本です。商品名・ショップ名・製造者・価格はすべて架空のものです。<br>商品写真は画像生成AIで作成しています。実際の案件では、実物の商品写真を使用します。</p>
+    </div>
+  </footer>
+</body>
+</html>
