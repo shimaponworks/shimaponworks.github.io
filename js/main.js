@@ -11,6 +11,8 @@ const groups = [
   '.faq',
   '.about',
   '.contact__inner > *',
+  // 作品の解説ページ
+  '.request li', '.thinking li', '.shot', '.check-list li', '.case-meta div',
 ];
 
 const targets = [];
