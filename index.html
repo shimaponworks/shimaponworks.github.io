@@ -15,7 +15,8 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f1f3d'/%3E%3Cpath d='M4 24l8-11 5 7 4-5 7 9z' fill='%232f6fe4'/%3E%3Ccircle cx='23' cy='9' r='3' fill='%23f2a65a'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/style.css?v=20261010b">
+  <link rel="stylesheet" href="css/style.css?v=20261011">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <!-- LINEのアイコン（ボタンで使い回す） -->
@@ -55,14 +56,14 @@
           </linearGradient>
         </defs>
         <rect width="1440" height="440" fill="url(#sky)"/>
-        <circle cx="1110" cy="300" r="40" fill="#ffd9a0" opacity="0.95"/>
+        <circle class="hero__sun" cx="1110" cy="300" r="40" fill="#ffd9a0" opacity="0.95"/>
         <path d="M0 420 L180 250 L300 340 L470 170 L640 330 L760 260 L900 380 L1040 230 L1200 360 L1320 280 L1440 360 L1440 440 L0 440Z" fill="#1a2f5c"/>
         <path d="M0 440 L140 340 L260 400 L420 300 L560 410 L720 330 L880 420 L1010 350 L1160 430 L1300 360 L1440 420 L1440 440Z" fill="#12244a"/>
         <rect y="440" width="1440" height="120" fill="url(#lake)"/>
-        <g stroke="#9cc2ff" stroke-width="2" stroke-linecap="round" opacity="0.35">
+        <g class="hero__ripple" stroke="#9cc2ff" stroke-width="2" stroke-linecap="round" opacity="0.35">
           <path d="M980 470h200M1020 492h120M1050 512h60M240 480h160M300 504h90"/>
         </g>
-        <g fill="#ffffff">
+        <g class="hero__stars" fill="#ffffff">
           <circle cx="160" cy="70" r="1.6"/><circle cx="420" cy="40" r="1.2"/><circle cx="690" cy="90" r="1.4"/><circle cx="920" cy="50" r="1.2"/><circle cx="1260" cy="80" r="1.6"/><circle cx="1360" cy="150" r="1.1"/><circle cx="560" cy="150" r="1"/><circle cx="80" cy="190" r="1.1"/>
         </g>
       </svg>
@@ -126,7 +127,7 @@
         <ul class="works">
           <li class="work">
             <a class="work__link" href="https://shimaponworks.github.io/lumio/" target="_blank" rel="noopener">
-              <img class="work__img" src="images/work-lumio.webp" width="800" height="420" alt="美容サロン Lumio のLPのファーストビュー" loading="lazy">
+              <div class="work__thumb"><img class="work__img" src="images/work-lumio.webp" width="800" height="420" alt="美容サロン Lumio のLPのファーストビュー" loading="lazy"></div>
               <div class="work__body">
                 <p class="work__tag">LP｜美容サロン</p>
                 <h3 class="work__title">美容サロン「Lumio」</h3>
@@ -141,7 +142,7 @@
           </li>
           <li class="work">
             <a class="work__link" href="https://shimaponworks.github.io/milkyway/" target="_blank" rel="noopener">
-              <img class="work__img" src="images/work-milkyway.webp" width="800" height="420" alt="アイサロン Milky Way のLPのファーストビュー" loading="lazy">
+              <div class="work__thumb"><img class="work__img" src="images/work-milkyway.webp" width="800" height="420" alt="アイサロン Milky Way のLPのファーストビュー" loading="lazy"></div>
               <div class="work__body">
                 <p class="work__tag">LP｜アイサロン</p>
                 <h3 class="work__title">アイサロン「Milky Way」</h3>
@@ -156,7 +157,7 @@
           </li>
           <li class="work">
             <a class="work__link" href="https://shimaponworks.github.io/hoshinoumi/" target="_blank" rel="noopener">
-              <img class="work__img" src="images/work-hoshinoumi.webp" width="800" height="420" alt="ほしのうみ水族館のLPのファーストビュー" loading="lazy">
+              <div class="work__thumb"><img class="work__img" src="images/work-hoshinoumi.webp" width="800" height="420" alt="ほしのうみ水族館のLPのファーストビュー" loading="lazy"></div>
               <div class="work__body">
                 <p class="work__tag">LP｜レジャー施設</p>
                 <h3 class="work__title">ほしのうみ水族館</h3>
@@ -171,7 +172,7 @@
           </li>
           <li class="work">
             <a class="work__link" href="https://shimaponworks.github.io/247books/" target="_blank" rel="noopener">
-              <img class="work__img" src="images/work-247books.webp" width="800" height="420" alt="24時間営業の無人書店 24/7 BOOKS のLPのファーストビュー" loading="lazy">
+              <div class="work__thumb"><img class="work__img" src="images/work-247books.webp" width="800" height="420" alt="24時間営業の無人書店 24/7 BOOKS のLPのファーストビュー" loading="lazy"></div>
               <div class="work__body">
                 <p class="work__tag">LP｜書店</p>
                 <h3 class="work__title">無人書店「24/7 BOOKS」</h3>
@@ -186,7 +187,7 @@
           </li>
           <li class="work">
             <a class="work__link" href="https://shimaponworks.github.io/clocca/" target="_blank" rel="noopener">
-              <img class="work__img" src="images/work-clocca.webp" width="800" height="420" alt="クラウド勤怠管理 Clocca のLPのファーストビュー" loading="lazy">
+              <div class="work__thumb"><img class="work__img" src="images/work-clocca.webp" width="800" height="420" alt="クラウド勤怠管理 Clocca のLPのファーストビュー" loading="lazy"></div>
               <div class="work__body">
                 <p class="work__tag">LP｜企業向けサービス</p>
                 <h3 class="work__title">勤怠管理ツール「Clocca」</h3>
@@ -201,7 +202,7 @@
           </li>
           <li class="work">
             <a class="work__link" href="https://shimaponworks.github.io/koharu/" target="_blank" rel="noopener">
-              <img class="work__img" src="images/work-koharu.webp" width="800" height="420" alt="果実工房こはるの楽天市場の商品画像と、縦長の商品ページ" loading="lazy">
+              <div class="work__thumb"><img class="work__img" src="images/work-koharu.webp" width="800" height="420" alt="果実工房こはるの楽天市場の商品画像と、縦長の商品ページ" loading="lazy"></div>
               <div class="work__body">
                 <p class="work__tag">ネットショップ｜楽天市場</p>
                 <h3 class="work__title">果実工房こはる</h3>
@@ -372,5 +373,6 @@
       <small>&copy; Shimapon Works</small>
     </div>
   </footer>
+  <script src="js/main.js?v=20261011" defer></script>
 </body>
 </html>
