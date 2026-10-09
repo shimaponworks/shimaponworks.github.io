@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>昭和レトロのロック喫茶｜喫茶 ROCK'N SODA（ランチ・ライブ）</title>
+  <meta name="description" content="昼はナポリタン、夜はロックンロール。喫茶 ROCK'N SODA は、ロックが流れる昭和レトロの喫茶店です。花柄グラスのクリームソーダ、鉄板ナポリタンのランチ、小さなステージでのライブやオープンマイクも。">
+  <!-- ポートフォリオ用の架空サイトのため、検索結果に出さない -->
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="昭和レトロのロック喫茶｜喫茶 ROCK'N SODA">
+  <meta property="og:description" content="昼はナポリタン、夜はロックンロール。小さなステージのある昭和レトロ喫茶。">
+  <link rel="canonical" href="https://shimaponworks.github.io/rocknsoda/">
+  <meta property="og:url" content="https://shimaponworks.github.io/rocknsoda/">
+  <meta property="og:image" content="https://shimaponworks.github.io/rocknsoda/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 欧文（軽いのでそのまま読み込む） -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&amp;display=swap" media="print" onload="this.media='all'">
+  <!-- 見出しのレトロな日本語フォント：ページ内の文字だけに絞って軽くしている。文章を変えたら
+       node tools/font-subset.js portfolio/cafe-rocknsoda/index.html "RocknRoll+One" を実行 -->
+  <link rel="stylesheet" data-font-subset href="https://fonts.googleapis.com/css2?family=RocknRoll+One&amp;display=swap&amp;text=%20!%22%23%24%25%26'()*%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%C2%A9%E2%80%BB%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%91%E3%81%92%E3%81%93%E3%81%94%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B2%E3%81%B3%E3%81%B5%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BE%E3%81%BF%E3%82%81%E3%82%82%E3%82%84%E3%82%85%E3%82%86%E3%82%87%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%A9%E3%82%AA%E3%82%AB%E3%82%AD%E3%82%AE%E3%82%AF%E3%82%B0%E3%82%B1%E3%82%B3%E3%82%B5%E3%82%B8%E3%82%B9%E3%82%BB%E3%82%BD%E3%82%BF%E3%83%80%E3%83%81%E3%83%83%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%8A%E3%83%8B%E3%83%8F%E3%83%90%E3%83%92%E3%83%95%E3%83%96%E3%83%97%E3%83%99%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%9F%E3%83%A0%E3%83%A1%E3%83%A2%E3%83%A3%E3%83%A5%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AC%E3%83%AD%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8A%E4%B8%8B%E4%B8%BB%E4%BA%88%E4%BA%8B%E4%BA%BA%E4%BB%8A%E4%BB%96%E4%BB%98%E4%BB%A5%E4%BC%91%E4%BC%B8%E4%BD%93%E4%BD%9C%E4%BD%BF%E4%BE%A1%E5%83%8F%E5%85%88%E5%85%A5%E5%85%A8%E5%86%85%E5%86%86%E5%86%99%E5%87%BA%E5%88%86%E5%88%A9%E5%88%B6%E5%89%8D%E5%8A%A0%E5%8C%85%E5%8D%8A%E5%8D%B5%E5%8E%9A%E5%8F%82%E5%8F%97%E5%90%88%E5%90%8D%E5%92%8C%E5%95%86%E5%95%8F%E5%96%AB%E5%96%B6%E5%99%A8%E5%9B%A3%E5%9B%BA%E5%9C%9F%E5%9C%A8%E5%9C%B0%E5%A0%B1%E5%A0%B4%E5%A3%81%E5%A3%B2%E5%A4%95%E5%A4%9A%E5%A4%9C%E5%A4%A7%E5%A4%AA%E5%A5%8F%E5%A5%91%E5%AD%90%E5%AE%9A%E5%AE%A2%E5%B0%8F%E5%B1%8A%E5%B8%AD%E5%BA%97%E5%BC%BE%E5%BD%93%E6%80%9D%E6%83%85%E6%84%8F%E6%88%90%E6%89%80%E6%89%8B%E6%8A%95%E6%8C%81%E6%95%B0%E6%95%B7%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%94%E6%98%AD%E6%98%BC%E6%99%82%E6%9B%9C%E6%9B%B2%E6%9C%AC%E6%9D%A5%E6%9D%BF%E6%9E%B6%E6%9F%84%E6%A0%BC%E6%A4%85%E6%A5%AD%E6%A5%BD%E6%A8%A9%E6%AD%8C%E6%AD%93%E6%AE%8B%E6%AF%8E%E6%B0%97%E6%B0%B4%E6%B3%A8%E6%BC%94%E7%81%AB%E7%84%A1%E7%84%BC%E7%85%99%E7%85%AE%E7%86%9F%E7%90%86%E7%94%9F%E7%94%A8%E7%94%BB%E7%9A%BF%E7%9B%B8%E7%9C%9F%E7%9D%80%E7%9F%A5%E7%A6%81%E7%A8%8E%E7%A9%BA%E7%AE%A1%E7%B4%84%E7%B5%84%E7%B5%A1%E7%B7%92%E8%80%85%E8%81%B4%E8%88%97%E8%89%B2%E8%8A%B1%E8%8C%B6%E8%91%97%E8%A1%97%E8%A6%8B%E8%A8%B1%E8%AA%9E%E8%AB%87%E8%AB%BE%E8%B2%A9%E8%B2%B7%E8%B2%B8%E8%B3%AA%E8%B5%A4%E8%B6%8A%E8%B7%9D%E8%BB%BD%E8%BE%BC%E8%BF%8E%E8%BF%91%E9%80%A3%E9%80%B1%E9%87%91%E9%89%84%E9%8A%AD%E9%96%93%E9%99%8D%E9%9B%86%E9%9B%A2%E9%9F%B3%E9%A0%86%E9%A3%9B%E9%A3%9F%E9%A3%B2%E9%AB%98%E9%B3%B4%E9%BA%BA%EF%BC%88%EF%BC%89%EF%BC%8B%EF%BC%8F%EF%BC%9F%EF%BD%9C" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&amp;display=swap">
+    <link rel="stylesheet" data-font-subset href="https://fonts.googleapis.com/css2?family=RocknRoll+One&amp;display=swap&amp;text=%20!%22%23%24%25%26'()*%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%C2%A9%E2%80%BB%E3%80%81%E3%80%82%E3%80%8C%E3%80%8D%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%91%E3%81%92%E3%81%93%E3%81%94%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9B%E3%81%9D%E3%81%9E%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B2%E3%81%B3%E3%81%B5%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BE%E3%81%BF%E3%82%81%E3%82%82%E3%82%84%E3%82%85%E3%82%86%E3%82%87%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%8F%E3%82%92%E3%82%93%E3%82%A2%E3%82%A3%E3%82%A4%E3%82%A6%E3%82%A9%E3%82%AA%E3%82%AB%E3%82%AD%E3%82%AE%E3%82%AF%E3%82%B0%E3%82%B1%E3%82%B3%E3%82%B5%E3%82%B8%E3%82%B9%E3%82%BB%E3%82%BD%E3%82%BF%E3%83%80%E3%83%81%E3%83%83%E3%83%86%E3%83%87%E3%83%88%E3%83%89%E3%83%8A%E3%83%8B%E3%83%8F%E3%83%90%E3%83%92%E3%83%95%E3%83%96%E3%83%97%E3%83%99%E3%83%9A%E3%83%9B%E3%83%9C%E3%83%9D%E3%83%9E%E3%83%9F%E3%83%A0%E3%83%A1%E3%83%A2%E3%83%A3%E3%83%A5%E3%83%A9%E3%83%AA%E3%83%AB%E3%83%AC%E3%83%AD%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%8A%E4%B8%8B%E4%B8%BB%E4%BA%88%E4%BA%8B%E4%BA%BA%E4%BB%8A%E4%BB%96%E4%BB%98%E4%BB%A5%E4%BC%91%E4%BC%B8%E4%BD%93%E4%BD%9C%E4%BD%BF%E4%BE%A1%E5%83%8F%E5%85%88%E5%85%A5%E5%85%A8%E5%86%85%E5%86%86%E5%86%99%E5%87%BA%E5%88%86%E5%88%A9%E5%88%B6%E5%89%8D%E5%8A%A0%E5%8C%85%E5%8D%8A%E5%8D%B5%E5%8E%9A%E5%8F%82%E5%8F%97%E5%90%88%E5%90%8D%E5%92%8C%E5%95%86%E5%95%8F%E5%96%AB%E5%96%B6%E5%99%A8%E5%9B%A3%E5%9B%BA%E5%9C%9F%E5%9C%A8%E5%9C%B0%E5%A0%B1%E5%A0%B4%E5%A3%81%E5%A3%B2%E5%A4%95%E5%A4%9A%E5%A4%9C%E5%A4%A7%E5%A4%AA%E5%A5%8F%E5%A5%91%E5%AD%90%E5%AE%9A%E5%AE%A2%E5%B0%8F%E5%B1%8A%E5%B8%AD%E5%BA%97%E5%BC%BE%E5%BD%93%E6%80%9D%E6%83%85%E6%84%8F%E6%88%90%E6%89%80%E6%89%8B%E6%8A%95%E6%8C%81%E6%95%B0%E6%95%B7%E6%96%87%E6%96%99%E6%96%B9%E6%97%A5%E6%98%94%E6%98%AD%E6%98%BC%E6%99%82%E6%9B%9C%E6%9B%B2%E6%9C%AC%E6%9D%A5%E6%9D%BF%E6%9E%B6%E6%9F%84%E6%A0%BC%E6%A4%85%E6%A5%AD%E6%A5%BD%E6%A8%A9%E6%AD%8C%E6%AD%93%E6%AE%8B%E6%AF%8E%E6%B0%97%E6%B0%B4%E6%B3%A8%E6%BC%94%E7%81%AB%E7%84%A1%E7%84%BC%E7%85%99%E7%85%AE%E7%86%9F%E7%90%86%E7%94%9F%E7%94%A8%E7%94%BB%E7%9A%BF%E7%9B%B8%E7%9C%9F%E7%9D%80%E7%9F%A5%E7%A6%81%E7%A8%8E%E7%A9%BA%E7%AE%A1%E7%B4%84%E7%B5%84%E7%B5%A1%E7%B7%92%E8%80%85%E8%81%B4%E8%88%97%E8%89%B2%E8%8A%B1%E8%8C%B6%E8%91%97%E8%A1%97%E8%A6%8B%E8%A8%B1%E8%AA%9E%E8%AB%87%E8%AB%BE%E8%B2%A9%E8%B2%B7%E8%B2%B8%E8%B3%AA%E8%B5%A4%E8%B6%8A%E8%B7%9D%E8%BB%BD%E8%BE%BC%E8%BF%8E%E8%BF%91%E9%80%A3%E9%80%B1%E9%87%91%E9%89%84%E9%8A%AD%E9%96%93%E9%99%8D%E9%9B%86%E9%9B%A2%E9%9F%B3%E9%A0%86%E9%A3%9B%E9%A3%9F%E9%A3%B2%E9%AB%98%E9%B3%B4%E9%BA%BA%EF%BC%88%EF%BC%89%EF%BC%8B%EF%BC%8F%EF%BC%9F%EF%BD%9C">
+  </noscript>
+
+  <link rel="stylesheet" href="css/style.css?v=20261011">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8.1-6C21.6 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></symbol>
+    <!-- レコード -->
+    <symbol id="i-record" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#2b1a12"/><g fill="none" stroke="#5a4033" stroke-width="1"><circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="18"/></g><circle cx="32" cy="32" r="11" fill="currentColor"/><circle cx="32" cy="32" r="2" fill="#2b1a12"/></symbol>
+    <!-- 昭和レトロの花（オリジナルの柄） -->
+    <symbol id="i-flower" viewBox="0 0 40 40"><g fill="currentColor"><circle cx="20" cy="8" r="7"/><circle cx="31.4" cy="16.3" r="7"/><circle cx="27" cy="29.7" r="7"/><circle cx="13" cy="29.7" r="7"/><circle cx="8.6" cy="16.3" r="7"/></g><circle cx="20" cy="20" r="6" fill="#e2a227"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="#top"><span class="logo__sub">喫茶</span><span class="logo__name">ROCK'N SODA</span></a>
+      <button class="header__toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="global-nav" aria-label="ページ内メニュー">
+        <ul class="header__list">
+          <li><a href="#lunch">ランチ</a></li>
+          <li><a href="#kissa">喫茶メニュー</a></li>
+          <li><a href="#stage">ステージ</a></li>
+          <li><a href="#info">店舗情報</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+        <a class="btn btn--line btn--sm header__cta" href="#reserve">ライブの席を予約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== ファーストビュー ===== -->
+    <section class="hero">
+      <picture class="hero__media">
+        <source media="(min-width: 768px)" srcset="images/hero-960.webp 960w, images/hero.webp 1376w" sizes="100vw" width="1376" height="768">
+        <img src="images/hero-sp.webp" srcset="images/hero-sp-560.webp 560w, images/hero-sp.webp 760w" sizes="100vw" width="760" height="943" alt="赤いベルベットの席とギターの飾られた壁、奥に小さなステージがある昭和レトロの喫茶店" fetchpriority="high">
+      </picture>
+      <div class="hero__body container">
+        <p class="hero__label">ランチ・喫茶・ライブ｜昭和レトロのロック喫茶</p>
+        <h1 class="hero__title"><span>昼はナポリタン、</span><span>夜は<em>ロックンロール</em>。</span></h1>
+        <p class="hero__lead">花柄グラスのクリームソーダと、<br class="sp-only">レコードの音。<br>小さなステージのある喫茶店です。</p>
+        <div class="hero__buttons">
+          <a class="btn btn--line" href="#reserve"><svg class="btn__icon" aria-hidden="true"><use href="#i-line"/></svg>ライブの席を予約する</a>
+          <a class="btn btn--cream" href="#lunch">ランチメニューを見る</a>
+        </div>
+        <p class="hero__hours">11:00〜22:00｜火曜定休｜全席禁煙</p>
+      </div>
+    </section>
+
+    <!-- ===== 1日の流れ ===== -->
+    <section class="day" aria-label="ROCK'N SODA の1日">
+      <div class="container">
+        <ol class="day__list">
+          <li class="day__item">
+            <p class="day__time">11:00</p>
+            <h2 class="day__title">ランチ</h2>
+            <p>鉄板ナポリタンや、ふわとろオムライス。予約なしでどうぞ。</p>
+          </li>
+          <li class="day__item">
+            <p class="day__time">15:00</p>
+            <h2 class="day__title">喫茶タイム</h2>
+            <p>クリームソーダと固めのプリンで、レコードを聴きながらひと休み。</p>
+          </li>
+          <li class="day__item day__item--night">
+            <p class="day__time">20:00</p>
+            <h2 class="day__title">ライブ</h2>
+            <p>金・土は小さなステージでライブ。水曜は飛び入りOKのオープンマイク。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== コンセプト ===== -->
+    <section class="section concept" id="concept">
+      <div class="container">
+        <div class="concept__inner">
+          <figure class="concept__img js-fade">
+            <img src="images/wall.webp" srcset="images/wall-480.webp 480w, images/wall.webp 800w" sizes="(min-width: 1024px) 520px, 100vw" width="800" height="597" alt="クリーム色の壁に3本のエレキギターとレコード、ピンクのネオンの稲妻" loading="lazy">
+            <svg class="concept__record" aria-hidden="true"><use href="#i-record"/></svg>
+          </figure>
+          <div class="concept__body js-fade">
+            <p class="heading__en">Welcome</p>
+            <h2 class="heading__ja">ようこそ、<br>昭和のロック喫茶へ。</h2>
+            <p>赤いベルベットの椅子、壁にかかったギターとレコード。BGMは、店主が集めたロックのレコードです。</p>
+            <p>昼は近所の人がナポリタンを食べに、夕方はクリームソーダを飲みに、夜はステージの音を聴きに。一日のどの時間に来ても、ちょっとだけ気分が上がる喫茶店でありたいと思っています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ランチ ===== -->
+    <section class="section section--alt lunch" id="lunch">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Lunch</p>
+          <h2 class="heading__ja">喫茶店のランチ</h2>
+          <p class="heading__lead">11:00〜15:00｜ご予約なしでどうぞ<br>すべてサラダ・スープ・ドリンク付き</p>
+        </div>
+        <div class="lunch__inner">
+          <figure class="lunch__img js-fade">
+            <img src="images/lunch.webp" srcset="images/lunch-480.webp 480w, images/lunch.webp 800w" sizes="(min-width: 1024px) 520px, 100vw" width="800" height="597" alt="鉄板に乗ったナポリタンと、サラダ・スープ・アイスコーヒーのランチセット" loading="lazy">
+          </figure>
+          <ul class="ticket-list">
+            <li class="ticket js-fade">
+              <p class="ticket__badge">いちばん人気</p>
+              <h3 class="ticket__name">鉄板ナポリタン</h3>
+              <p class="ticket__desc">じゅうじゅう鳴る鉄板に、卵を敷いて。太めの麺にケチャップをからめました。</p>
+              <p class="ticket__price">1,100<span>円</span></p>
+            </li>
+            <li class="ticket js-fade">
+              <h3 class="ticket__name">ふわとろオムライス</h3>
+              <p class="ticket__desc">昔ながらのチキンライスを、半熟の卵で包んで。</p>
+              <p class="ticket__price">1,200<span>円</span></p>
+            </li>
+            <li class="ticket js-fade">
+              <h3 class="ticket__name">煮込みハンバーグ</h3>
+              <p class="ticket__desc">デミグラスソースでじっくり煮込んだ、ボリュームのある一皿。</p>
+              <p class="ticket__price">1,350<span>円</span></p>
+            </li>
+          </ul>
+        </div>
+        <p class="note note--center">※価格はすべて税込です。「いちばん人気」は当店のランチの注文数によるものです。</p>
+      </div>
+    </section>
+
+    <!-- ===== 喫茶メニュー ===== -->
+    <section class="section kissa" id="kissa">
+      <div class="container">
+        <div class="heading js-fade">
+          <p class="heading__en">Cream Soda</p>
+          <h2 class="heading__ja">花柄グラスの、<br class="sp-only">クリームソーダ</h2>
+          <p class="heading__lead">昭和の喫茶店でおなじみの、花柄のレトログラスでお出しします。</p>
+        </div>
+        <figure class="kissa__soda js-fade">
+          <img src="images/soda.webp" srcset="images/soda-480.webp 480w, images/soda.webp 800w" sizes="(min-width: 1024px) 800px, 100vw" width="800" height="597" alt="花柄のグラスに入った、緑・赤・青・黄色の4色のクリームソーダ" loading="lazy">
+        </figure>
+        <ul class="soda-colors js-fade" aria-label="クリームソーダの4つの味">
+          <li class="soda-colors__item soda-colors__item--melon"><svg aria-hidden="true"><use href="#i-flower"/></svg>メロン</li>
+          <li class="soda-colors__item soda-colors__item--berry"><svg aria-hidden="true"><use href="#i-flower"/></svg>いちご</li>
+          <li class="soda-colors__item soda-colors__item--blue"><svg aria-hidden="true"><use href="#i-flower"/></svg>ブルーハワイ</li>
+          <li class="soda-colors__item soda-colors__item--lemon"><svg aria-hidden="true"><use href="#i-flower"/></svg>レモン</li>
+        </ul>
+
+        <div class="kissa__inner">
+          <figure class="kissa__img js-fade">
+            <img src="images/pudding.webp" srcset="images/pudding-480.webp 480w, images/pudding.webp 800w" sizes="(min-width: 768px) 46vw, 100vw" width="800" height="597" alt="脚つきのガラスの器に入った、さくらんぼを乗せた固めのプリンとコーヒー" loading="lazy">
+          </figure>
+          <dl class="kissa__menu js-fade">
+            <div><dt>クリームソーダ（4色）</dt><dd>750円</dd></div>
+            <div><dt>固めのプリン</dt><dd>550円</dd></div>
+            <div><dt>厚焼きホットケーキ</dt><dd>800円</dd></div>
+            <div><dt>ブレンドコーヒー</dt><dd>550円</dd></div>
+            <div><dt>プリン＋ドリンクのセット</dt><dd>950円</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ステージ ===== -->
+    <section class="section stage" id="stage">
+      <div class="container">
+        <div class="heading heading--light js-fade">
+          <p class="heading__en">Live Stage</p>
+          <h2 class="heading__ja">小さなステージで、<br class="sp-only">今夜も一曲。</h2>
+          <p class="heading__lead">お客さんとの距離は、手を伸ばせば届くくらい。<br>聴くのも、出るのも、気軽にどうぞ。</p>
+        </div>
+        <figure class="stage__img js-fade">
+          <img src="images/live-640.webp" srcset="images/live-640.webp 640w, images/live.webp 1000w" sizes="(min-width: 1024px) 1000px, 100vw" width="1000" height="747" alt="ピンクのネオンの星の下、小さなステージでギターを弾く人を、客席から見たところ" loading="lazy">
+        </figure>
+        <ul class="schedule">
+          <li class="schedule__item js-fade">
+            <p class="schedule__day">毎週 金・土<span>20:00〜</span></p>
+            <h3 class="schedule__title">ライブナイト</h3>
+            <p>ロックバンドから弾き語りまで。出演者はLINEでお知らせします。</p>
+            <p class="schedule__price">チャージ 1,000円＋1ドリンク</p>
+          </li>
+          <li class="schedule__item js-fade">
+            <p class="schedule__day">毎週 日曜<span>14:00〜</span></p>
+            <h3 class="schedule__title">昼のアコースティック</h3>
+            <p>ランチのあとに、ゆったりした生演奏を。お子さま連れも歓迎です。</p>
+            <p class="schedule__price">チャージなし（投げ銭制）</p>
+          </li>
+          <li class="schedule__item js-fade">
+            <p class="schedule__day">毎週 水曜<span>19:00〜</span></p>
+            <h3 class="schedule__title">オープンマイク</h3>
+            <p>飛び入りで演奏できる日。ひと組2曲まで、楽器ひとつで参加できます。</p>
+            <p class="schedule__price">参加無料＋1ドリンク</p>
+          </li>
+        </ul>
+
+        <div class="perform js-fade">
+          <h3 class="perform__title">ステージに出てみたい方へ</h3>
+          <ul class="perform__list">
+            <li>ギターアンプ・マイク・小さめのドラムセットは、無料でお使いいただけます。</li>
+            <li>金・土のライブの出演は、LINEでご相談ください。</li>
+            <li>オープンマイクは、当日お店で受け付けます（先着順）。</li>
+          </ul>
+        </div>
+        <p class="note note--center note--light">※店内のBGMやステージでの演奏に使う楽曲は、著作権管理団体との許諾契約のもとで利用しています。</p>
+      </div>
+    </section>
+
+    <!-- ===== 店舗情報 ===== -->
+    <section class="section section--alt info" id="info">
+      <div class="container container--narrow">
+        <div class="heading js-fade">
+          <p class="heading__en">Shop Info</p>
+          <h2 class="heading__ja">店舗情報</h2>
+        </div>
+        <dl class="info__table js-fade">
+          <div><dt>店名</dt><dd>喫茶 ROCK'N SODA（ロックンソーダ）</dd></div>
+          <div><dt>営業時間</dt><dd>11:00〜22:00<br>（ランチ 11:00〜15:00／ラストオーダー 21:30）</dd></div>
+          <div><dt>定休日</dt><dd>毎週火曜日</dd></div>
+          <div><dt>所在地</dt><dd>高架下商店街 0-0-0</dd></div>
+          <div><dt>席数</dt><dd>24席（ボックス席・カウンター）</dd></div>
+          <div><dt>その他</dt><dd>全席禁煙／お子さま連れ歓迎（金・土の夜はライブのため音が大きめです）</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== よくある質問 ===== -->
+    <section class="section faq-section" id="faq">
+      <div class="container container--narrow">
+        <div class="heading js-fade">
+          <p class="heading__en">FAQ</p>
+          <h2 class="heading__ja">よくあるご質問</h2>
+        </div>
+        <div class="faq__list js-fade">
+          <details class="faq">
+            <summary class="faq__q">ランチは予約できますか？</summary>
+            <div class="faq__a"><p>ランチはご予約なしでお越しください。6名さま以上の場合は、LINEで前日までにご連絡いただけると、お席をご用意できます。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">ライブの日も、食事だけで利用できますか？</summary>
+            <div class="faq__a"><p>はい。ただし、金・土の20時以降はライブのチャージ（1,000円）をいただきます。食事だけの場合は、それより前の時間がおすすめです。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">ひとりでも入りやすいですか？</summary>
+            <div class="faq__a"><p>カウンター席があるので、おひとりでも気軽にどうぞ。レコードを聴きながら、のんびりしている方も多いです。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">楽器を持っていなくても、オープンマイクに出られますか？</summary>
+            <div class="faq__a"><p>お店のアコースティックギターを1本お貸しできます。歌だけ・手ぶらでの参加も歓迎です。</p></div>
+          </details>
+          <details class="faq">
+            <summary class="faq__q">花柄のグラスは買えますか？</summary>
+            <div class="faq__a"><p>お店で使っているグラスの販売はしていません。クリームソーダと一緒に、写真に残していってください。</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 予約CTA ===== -->
+    <section class="cta" id="reserve">
+      <div class="container">
+        <div class="cta__box js-fade">
+          <svg class="cta__record" aria-hidden="true"><use href="#i-record"/></svg>
+          <p class="heading__en heading__en--light">Reservation</p>
+          <h2 class="cta__title">今夜は、ステージの<br class="sp-only">前の席で。</h2>
+          <p class="cta__text">ライブの日のお席の予約と、出演のご相談はLINEで。<br>ランチは予約なしでどうぞ。</p>
+          <a class="btn btn--line btn--lg" href="#reserve" data-demo><svg class="btn__icon" aria-hidden="true"><use href="#i-line"/></svg>LINEで席を予約する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="logo logo--footer"><span class="logo__sub">喫茶</span><span class="logo__name">ROCK'N SODA</span></p>
+      <p class="footer__note">※このページはポートフォリオ用に制作した架空の喫茶店のLPです。<br class="pc-only">店名・所在地・メニュー・料金・イベントはすべて架空のものです。<br>写真は画像生成AIで作成しています。</p>
+      <small class="footer__copy">&copy; 喫茶 ROCK'N SODA</small>
+    </div>
+  </footer>
+
+  <!-- スマホ用 追従ボタン -->
+  <div class="fixed-cta" aria-hidden="true">
+    <a class="btn btn--line" href="#reserve" tabindex="-1"><svg class="btn__icon" aria-hidden="true"><use href="#i-line"/></svg>ライブの席を予約する</a>
+  </div>
+
+  <!-- デモ用の通知 -->
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js?v=20261011" defer></script>
+</body>
+</html>
