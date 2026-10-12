@@ -40,6 +40,74 @@ if ('IntersectionObserver' in window) {
   fadeTargets.forEach((el) => el.classList.add('is-visible'));
 }
 
+// 1日の流れ（11:00 → 15:00 → 20:00）を、見えたら順番に表示
+const day = document.querySelector('.day');
+if (day && 'IntersectionObserver' in window) {
+  const dayObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      day.classList.add('is-visible');
+      dayObserver.disconnect();
+    }
+  }, { rootMargin: '0px 0px -10% 0px' });
+  dayObserver.observe(day);
+} else if (day) {
+  day.classList.add('is-visible');
+}
+
+// ファーストビュー：昼の店内 → 夜の店内 を、7秒ごとに切り替える
+const slides = document.querySelectorAll('.hero__slide');
+const clock = document.querySelector('.hero__clock');
+const pauseButton = document.querySelector('.hero__pause');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (slides.length > 1 && !reduceMotion) {
+  let current = 0;
+  let timer = null;
+  let paused = false;
+
+  const show = (next) => {
+    const prev = slides[current];
+    prev.classList.remove('is-active');
+    prev.classList.add('is-leaving');
+    setTimeout(() => prev.classList.remove('is-leaving'), 1800);
+    current = next;
+    slides[current].classList.add('is-active');
+    if (clock) {
+      clock.querySelector('span').textContent = slides[current].dataset.time;
+      clock.classList.remove('is-changing');
+      void clock.offsetWidth; // アニメーションをやり直す
+      clock.classList.add('is-changing');
+    }
+  };
+  const start = () => { clearInterval(timer); timer = setInterval(() => show((current + 1) % slides.length), 7000); };
+  const stop = () => clearInterval(timer);
+
+  // 夜の写真は、ページの表示が終わってから読み込む
+  const begin = () => {
+    document.querySelectorAll('.hero__slide [data-srcset]').forEach((el) => {
+      el.srcset = el.dataset.srcset;
+      el.removeAttribute('data-srcset');
+    });
+    start();
+    if (pauseButton) pauseButton.hidden = false;
+  };
+  if (document.readyState === 'complete') begin();
+  else window.addEventListener('load', begin);
+
+  if (pauseButton) {
+    pauseButton.addEventListener('click', () => {
+      paused = !paused;
+      pauseButton.setAttribute('aria-pressed', String(paused));
+      pauseButton.setAttribute('aria-label', paused ? '写真の切り替えを再開' : '写真の切り替えを一時停止');
+      if (paused) stop(); else start();
+    });
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else if (!paused) start();
+  });
+}
+
 // デモ用：予約ボタンを押したら、予約できない旨を通知する
 const toast = document.querySelector('.toast');
 let toastTimer;
