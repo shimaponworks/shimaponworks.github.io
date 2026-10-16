@@ -1,73 +1,37 @@
-// ハンバーガーメニュー
-const toggle = document.querySelector('.header__toggle');
-const nav = document.querySelector('.header__nav');
+// hair salon Lumio（ポートフォリオ用・架空）
+(() => {
+  // スマホの追従予約バー：FVを過ぎたら出し、予約セクションが見えている間は隠す
+  const bar = document.querySelector('.fixed-bar');
+  const fv = document.querySelector('.fv');
+  const reserve = document.querySelector('#reserve');
 
-if (toggle && nav) {
-  const setOpen = (open) => {
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-    nav.classList.toggle('is-open', open);
-  };
+  if (bar && fv && reserve && 'IntersectionObserver' in window) {
+    let pastFv = false;
+    let inReserve = false;
+    const update = () => bar.classList.toggle('is-show', pastFv && !inReserve);
 
-  toggle.addEventListener('click', () => {
-    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
-  });
+    new IntersectionObserver(([entry]) => {
+      pastFv = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      update();
+    }).observe(fv);
 
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setOpen(false));
-  });
+    new IntersectionObserver(([entry]) => {
+      inReserve = entry.isIntersecting;
+      update();
+    }).observe(reserve);
+  }
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') setOpen(false);
-  });
-}
-
-// スクロールで表示
-const fadeTargets = document.querySelectorAll('.js-fade');
-
-if ('IntersectionObserver' in window) {
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        fadeObserver.unobserve(entry.target);
-      }
+  // デモ用：予約セクションのボタンを押したら通知を出す（架空のサロンのため予約ページはない）
+  const toast = document.querySelector('.toast');
+  let timer;
+  document.querySelectorAll('[data-demo]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!toast) return;
+      toast.textContent = 'ポートフォリオ用の架空のサロンのため、予約ページはありません。';
+      toast.classList.add('is-show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('is-show'), 3200);
     });
-  }, { rootMargin: '0px 0px -10% 0px' });
-
-  fadeTargets.forEach((el) => fadeObserver.observe(el));
-} else {
-  fadeTargets.forEach((el) => el.classList.add('is-visible'));
-}
-
-// デモ用：予約ボタンを押したら、予約できない旨を通知する
-const toast = document.querySelector('.toast');
-let toastTimer;
-
-document.querySelectorAll('[data-demo]').forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (!toast) return;
-    toast.textContent = 'ポートフォリオ用のデモサイトのため、予約はできません。';
-    toast.classList.add('is-show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('is-show'), 3000);
   });
-});
-
-// 追従予約ボタン：ファーストビューと予約セクションが見えていないときだけ表示
-const fixedCta = document.querySelector('.fixed-cta');
-const fv = document.querySelector('.fv');
-const reserve = document.querySelector('#reserve');
-
-if (fixedCta && fv && reserve && 'IntersectionObserver' in window) {
-  const visible = new Map([[fv, true], [reserve, false]]);
-
-  const ctaObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => visible.set(entry.target, entry.isIntersecting));
-    fixedCta.classList.toggle('is-show', !visible.get(fv) && !visible.get(reserve));
-  });
-
-  ctaObserver.observe(fv);
-  ctaObserver.observe(reserve);
-}
+})();
