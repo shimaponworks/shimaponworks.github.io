@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作品集｜しまぽん（Shimapon Works）</title>
+  <meta name="description" content="しまぽん（Shimapon Works）の作品集。LP・チラシ・メニュー表・ポスター・SNS画像・ネットショップの商品ページを、作品ごとの制作の意図と一緒に載せています。掲載作品はすべて架空のサンプルです。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://shimaponworks.github.io/gallery/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="作品集｜しまぽん（Shimapon Works）">
+  <meta property="og:description" content="LP・チラシ・メニュー表・ポスター・SNS画像・ネットショップの商品ページの作品集です（掲載作品はすべて架空のサンプル）。">
+  <meta property="og:url" content="https://shimaponworks.github.io/gallery/">
+  <meta property="og:image" content="https://shimaponworks.github.io/gallery/images/ogp.jpg">
+  <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-ink: #1f2633;
+      --color-sub: #565e6c;
+      --color-line: #d8dce3;
+      --color-accent: #e08a3c;
+      --color-overlay: rgba(23, 28, 38, 0.94);
+      --color-on-overlay: #ffffff;
+      --color-on-overlay-line: rgba(255, 255, 255, 0.6);
+
+      --font-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+
+      --fs-hero: clamp(4rem, 15vw, 8.5rem);
+      --fs-title: clamp(1.375rem, 1rem + 1.6vw, 2rem);
+      --fs-body: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+      --fs-small: 0.8125rem;
+      --fs-caption: 0.75rem;
+
+      --page-x: 1.25rem;
+      --rail: 1.75rem;
+      --content-max: 76rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: clip; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      color: var(--color-ink);
+      font-family: var(--font-base);
+      font-weight: 500;
+      font-size: var(--fs-body);
+      line-height: 1.8;
+      -webkit-text-size-adjust: 100%;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    h1, h2, p, dl, dd, figure, ul { margin: 0; padding: 0; }
+    ul { list-style: none; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+
+    /* ===== 冒頭 ===== */
+    .intro {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 2.5rem var(--page-x) 4.5rem;
+    }
+    .intro__brand {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.75rem;
+      font-size: var(--fs-small);
+      letter-spacing: 0.12em;
+      color: var(--color-sub);
+    }
+    .intro__ridge { width: 7.5rem; height: 1.25rem; flex: none; color: var(--color-ink); }
+    .intro__sun { fill: var(--color-accent); }
+    .intro__title {
+      margin-top: 18vh;
+      font-size: var(--fs-hero);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    .intro__by {
+      margin-top: 1rem;
+      font-size: var(--fs-body);
+      font-weight: 700;
+    }
+    .intro__body { margin-top: 2rem; max-width: 34rem; }
+    .intro__note {
+      margin-top: 1rem;
+      font-size: var(--fs-small);
+      color: var(--color-sub);
+    }
+    .index { margin-top: 3rem; }
+    .index__label {
+      font-size: var(--fs-caption);
+      letter-spacing: 0.1em;
+      color: var(--color-sub);
+    }
+    .index__list { margin-top: 0.5rem; border-top: 1px solid var(--color-line); }
+    .index__list li { border-bottom: 1px solid var(--color-line); }
+    .index__list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      text-decoration: none;
+      font-size: var(--fs-small);
+    }
+    .index__list a:hover .index__work { text-decoration: underline; text-underline-offset: 0.2em; }
+    .index__kind { color: var(--color-sub); text-align: right; white-space: nowrap; }
+
+    /* ===== 作品の並び（一本の流れ） ===== */
+    .works {
+      position: relative;
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--page-x) 4rem calc(var(--page-x) + var(--rail));
+    }
+    .works::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 4rem;
+      left: calc(var(--page-x) + 0.3rem);
+      width: 1px;
+      background: var(--color-line);
+    }
+
+    .work { --pad: 4.5rem; position: relative; padding-top: var(--pad); }
+    .work:first-child { --pad: 0rem; }
+    .work--far { --pad: 7rem; }
+
+    .work__title {
+      font-size: var(--fs-title);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+    /* 水平線に沈む夕日（縦線の上の目印。画像が左の作品でも縦線の上に置く） */
+    .work::before,
+    .work::after {
+      content: "";
+      position: absolute;
+      left: calc(-1 * var(--rail) + 0.3rem);
+    }
+    .work::before {
+      top: calc(var(--pad) + 0.55rem);
+      width: 0.75rem;
+      height: 0.375rem;
+      margin-left: -0.375rem;
+      border-radius: 0.75rem 0.75rem 0 0;
+      background: var(--color-accent);
+    }
+    .work::after {
+      top: calc(var(--pad) + 0.55rem + 0.375rem);
+      width: 1.125rem;
+      height: 1px;
+      margin-left: -0.5625rem;
+      background: var(--color-ink);
+    }
+    .work__name { margin-top: 0.35rem; font-size: var(--fs-small); color: var(--color-sub); }
+    .work__spec {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.2rem 1rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-line);
+      font-size: var(--fs-small);
+      line-height: 1.7;
+    }
+    .work__spec dt { color: var(--color-sub); }
+    .work__body { margin-top: 1rem; }
+    .work__note {
+      margin-top: 0.85rem;
+      font-size: var(--fs-caption);
+      line-height: 1.6;
+      color: var(--color-sub);
+    }
+    .work__media { margin-top: 1.75rem; }
+
+    /* 画像（細い線1本。枠は描かない） */
+    .shot__link { display: block; cursor: zoom-in; }
+    .shot__link img { border: 1px solid var(--color-line); background: var(--color-bg); }
+    .shot figcaption {
+      margin-top: 0.4rem;
+      font-size: var(--fs-caption);
+      line-height: 1.5;
+      color: var(--color-sub);
+    }
+
+    /* PCとスマホの画面 */
+    .screens {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: end;
+    }
+    .extras {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem 0.75rem;
+      margin-top: 1.75rem;
+      align-items: start;
+    }
+    .extras--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .extras .shot--span { grid-column: 1 / -1; }
+
+    /* メニュー表：8ページを順に */
+    .pages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem 0.5rem;
+    }
+    @media (min-width: 768px) {
+      .pages { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .screens { grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); }
+    }
+
+    /* ポスター */
+    .poster { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+
+    /* 楽天：縦長の画像と商品画像 */
+    .slices {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .colophon {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 2.5rem var(--page-x) 3rem;
+      border-top: 1px solid var(--color-line);
+      font-size: var(--fs-caption);
+      color: var(--color-sub);
+    }
+
+    /* 拡大表示 */
+    .viewer {
+      width: 100vw;
+      max-width: none;
+      height: 100dvh;
+      max-height: none;
+      margin: 0;
+      padding: 3.5rem 1rem 2rem;
+      border: 0;
+      background: var(--color-overlay);
+      overflow-y: auto;
+    }
+    .viewer::backdrop { background: var(--color-overlay); }
+    .viewer__img {
+      margin: 0 auto;
+      width: auto;
+      max-width: min(100%, 75rem);
+      background: var(--color-bg);
+    }
+    .viewer__close {
+      position: fixed;
+      top: 0.75rem;
+      right: 1rem;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--color-on-overlay-line);
+      border-radius: 0;
+      background: transparent;
+      color: var(--color-on-overlay);
+      font: inherit;
+      font-size: var(--fs-small);
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      :root { --page-x: 2.5rem; --rail: 3rem; }
+      .intro { padding-top: 3rem; padding-bottom: 6.5rem; }
+      .intro__title { margin-top: 14vh; }
+      .work { --pad: 6rem; }
+      .work:first-child { --pad: 0rem; }
+      .work--far { --pad: 9rem; }
+      .extras--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .poster { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: end; }
+      .slices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (min-width: 1024px) {
+      :root { --page-x: 3.5rem; --rail: 4rem; }
+      .intro__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 4rem;
+        align-items: end;
+      }
+      .index { margin-top: 0; }
+      .work {
+        display: grid;
+        padding-top: var(--pad);
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 2fr);
+        gap: 3.5rem;
+        align-items: start;
+      }
+      .work__media { margin-top: 0.35rem; }
+      .work__text { position: sticky; top: 2rem; }
+      /* 画像を左、文字を右にする作品（ポスター・Clocca） */
+      .work--flip { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+      .work--flip .work__media { order: -1; }
+      /* 文字を上、画像を横いっぱいにする作品（メニュー表） */
+      .work--wide { display: block; }
+      .work--wide .work__text {
+        position: static;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 2fr);
+        gap: 0 3.5rem;
+      }
+      .work--wide .work__head { grid-row: span 3; }
+      .work--wide .work__spec { margin-top: 0; padding-top: 0; border-top: 0; }
+      .work--wide .work__media { margin-top: 2.25rem; }
+      .pages { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0.5rem; }
+      /* はみ出し（1か所だけ）：なな湯のスマホ画面をPC画面の下に少し重ねる */
+      .screens--overlap { grid-template-columns: minmax(0, 1fr) 13rem; }
+      .screens--overlap .shot--sp { margin-left: -4rem; margin-bottom: -3rem; position: relative; }
+      .screens--overlap .shot--sp img { box-shadow: 0 0 0 0.5rem var(--color-bg); }
+      .screens--overlap + .extras { margin-top: 4.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="intro">
+    <p class="intro__brand">Shimapon Works
+      <svg class="intro__ridge" viewBox="0 0 120 20" aria-hidden="true" focusable="false">
+        <polyline points="0,19 22,9 34,14 52,3 70,13 82,8 102,17 120,19" fill="none" stroke="currentColor" stroke-width="1"/>
+        <path class="intro__sun" d="M88 19 a6 6 0 0 1 12 0 z"/>
+      </svg>
+    </p>
+    <h1 class="intro__title">作品集</h1>
+    <div class="intro__grid">
+      <div>
+        <p class="intro__by">しまぽん（Shimapon Works）</p>
+        <div class="intro__body">
+          <p>お店やサービスのLP（1ページのWebページ）、チラシ、メニュー表、ポスター、SNS画像、ネットショップの商品ページを作っています。作品ごとに、誰に向けて何を伝えようとしたかを添えました。画像を押すと、大きく表示します。</p>
+          <p class="intro__note">※掲載している作品は、すべて練習として制作した架空のお店・サービスのサンプルです。店名・人名・数字なども架空です。写真の出どころは、作品ごとに書いています。画像の中の予約ボタンや友だち登録の案内は、架空のお店のデザインの一部です。</p>
+        </div>
+      </div>
+      <nav class="index" aria-labelledby="index-label">
+        <p class="index__label" id="index-label">載せている作品</p>
+        <ul class="index__list">
+          <li><a href="#nanayu"><span class="index__work">温浴施設のLP・チラシ・Instagram</span><span class="index__kind">Web＋印刷＋SNS</span></a></li>
+          <li><a href="#rocknsoda"><span class="index__work">喫茶店のLP・ライブ告知バナー</span><span class="index__kind">Web＋バナー</span></a></li>
+          <li><a href="#mikazuki"><span class="index__work">居酒屋のメニュー表</span><span class="index__kind">印刷 A4・8ページ</span></a></li>
+          <li><a href="#poster"><span class="index__work">医療セミナーのポスター</span><span class="index__kind">印刷 A2</span></a></li>
+          <li><a href="#lumio"><span class="index__work">美容サロンのLP</span><span class="index__kind">Web</span></a></li>
+          <li><a href="#clocca"><span class="index__work">企業向け勤怠管理サービスのLP</span><span class="index__kind">Web</span></a></li>
+          <li><a href="#milkyway"><span class="index__work">アイサロンのLP</span><span class="index__kind">Web</span></a></li>
+          <li><a href="#koharu"><span class="index__work">食品ギフトの商品ページ</span><span class="index__kind">楽天市場用の画像</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="works">
+
+    <!-- なな湯 -->
+    <article class="work" id="nanayu" aria-labelledby="nanayu-title">
+      <div class="work__text">
+        <h2 class="work__title" id="nanayu-title">温浴施設の<br>LP・チラシ・Instagram</h2>
+        <p class="work__name">健康センター「なな湯」（架空の施設）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>コンセプト・構成・文章・デザイン・コーディング、店頭チラシ（A4）、Instagram投稿3枚</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS / JavaScript、Canva</dd>
+        </dl>
+        <p class="work__body">お風呂・サウナ・岩盤浴・食事処・個室・名機コーナーまである施設を、仕事帰りや休日に「休みに行く場所」として選んでもらえるよう、「ととのう、休む」のひとつの軸にまとめました。チラシとInstagramも、LPと同じコピー・写真・色でそろえています。</p>
+        <p class="work__note">写真は画像生成AIで作成したイメージです。</p>
+      </div>
+      <div class="work__media">
+        <div class="screens screens--overlap">
+          <figure class="shot shot--pc">
+            <a class="shot__link" href="images/nanayu-pc.webp"><img src="images/nanayu-pc-800.webp" srcset="images/nanayu-pc-800.webp 800w, images/nanayu-pc.webp 1280w" sizes="(min-width: 1024px) 46vw, (min-width: 768px) 70vw, 75vw" width="800" height="500" alt="なな湯のLPのファーストビュー（PC）。露天風呂の写真に「疲れたら、とりあえず なな湯。」の見出し" fetchpriority="high"></a>
+            <figcaption>PC</figcaption>
+          </figure>
+          <figure class="shot shot--sp">
+            <a class="shot__link" href="images/nanayu-sp.webp"><img src="images/nanayu-sp-400.webp" width="400" height="866" alt="なな湯のLPのファーストビュー（スマホ）" loading="lazy"></a>
+            <figcaption>スマホ</figcaption>
+          </figure>
+        </div>
+        <div class="extras extras--four">
+          <figure class="shot">
+            <a class="shot__link" href="images/nanayu-flyer.webp"><img src="images/nanayu-flyer-600.webp" width="600" height="849" alt="A4縦の店頭チラシ。露天風呂の写真と見出し、サウナ・ラウンジ・食事処の写真、利用時間のパック、フロア案内" loading="lazy"></a>
+            <figcaption>店頭チラシ（A4縦）</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/nanayu-ig-1.webp"><img src="images/nanayu-ig-1-400.webp" width="400" height="500" alt="Instagram投稿1枚目：「疲れたら、とりあえず なな湯。」と施設の紹介" loading="lazy"></a>
+            <figcaption>Instagram投稿 1</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/nanayu-ig-2.webp"><img src="images/nanayu-ig-2-400.webp" width="400" height="500" alt="Instagram投稿2枚目：なな湯の7つの休み方" loading="lazy"></a>
+            <figcaption>Instagram投稿 2</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/nanayu-ig-3.webp"><img src="images/nanayu-ig-3-400.webp" width="400" height="500" alt="Instagram投稿3枚目：仕事帰りの2時間の過ごし方" loading="lazy"></a>
+            <figcaption>Instagram投稿 3</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ROCK'N SODA -->
+    <article class="work" id="rocknsoda" aria-labelledby="rocknsoda-title">
+      <div class="work__text">
+        <h2 class="work__title" id="rocknsoda-title">喫茶店の<br>LP・ライブ告知バナー</h2>
+        <p class="work__name">喫茶「ROCK'N SODA」（架空のお店）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>店名・コンセプト・構成・文章・デザイン・コーディング、ライブ告知バナー（縦長・横長）</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS / JavaScript、Photoshop</dd>
+        </dl>
+        <p class="work__body">昼はランチ、夜は小さなステージでライブ。目的の違う2種類のお客さんに向けて、コピーを「昼はナポリタン、夜はロックンロール。」にし、お店の1日を時刻の順に並べました。撮影場所の違う素材写真は、色味を暖かい方向にそろえて、ひとつのお店に見せています。</p>
+        <p class="work__note">写真は素材サイト（Unsplash・Pixabay）のものです。</p>
+      </div>
+      <div class="work__media">
+        <div class="screens">
+          <figure class="shot shot--pc">
+            <a class="shot__link" href="images/rocknsoda-pc.webp"><img src="images/rocknsoda-pc-800.webp" srcset="images/rocknsoda-pc-800.webp 800w, images/rocknsoda-pc.webp 1280w" sizes="(min-width: 1024px) 46vw, (min-width: 768px) 70vw, 75vw" width="800" height="500" alt="ROCK'N SODA のLPのファーストビュー（PC）。昼の店内の写真に「昼はナポリタン、夜はロックンロール。」の見出し" loading="lazy"></a>
+            <figcaption>PC</figcaption>
+          </figure>
+          <figure class="shot shot--sp">
+            <a class="shot__link" href="images/rocknsoda-sp.webp"><img src="images/rocknsoda-sp-400.webp" width="400" height="866" alt="ROCK'N SODA のLPのファーストビュー（スマホ）" loading="lazy"></a>
+            <figcaption>スマホ</figcaption>
+          </figure>
+        </div>
+        <div class="extras">
+          <figure class="shot">
+            <a class="shot__link" href="images/rocknsoda-banner-tall.webp"><img src="images/rocknsoda-banner-tall-400.webp" width="400" height="533" alt="縦長のライブ告知バナー：LIVE NIGHT、毎週金・土の20時から、逆光でギターを弾く人のシルエット" loading="lazy"></a>
+            <figcaption>ライブ告知バナー（縦長 3:4）</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/rocknsoda-banner-wide.webp"><img src="images/rocknsoda-banner-wide-600.webp" width="600" height="315" alt="横長のライブ告知バナー：左に日時、右に赤い照明を背にギターを弾く人のシルエット" loading="lazy"></a>
+            <figcaption>ライブ告知バナー（横長 1200×630）。縦長版と同じ内容を、横の画面に合わせて組み直しました。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 三日月酒場 -->
+    <article class="work work--wide work--far" id="mikazuki" aria-labelledby="mikazuki-title">
+      <div class="work__text">
+        <div class="work__head">
+          <h2 class="work__title" id="mikazuki-title">居酒屋のメニュー表<br>（A4・8ページ）</h2>
+          <p class="work__name">「三日月酒場」（架空のお店）</p>
+        </div>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>品書きの構成・文章・デザイン、店名のロゴ・和紙の地・ちょうちんの飾り・「一押し」の判</dd>
+          <dt>使ったもの</dt><dd>Canva</dd>
+        </dl>
+        <p class="work__body">ふらっと入ったお客さまにも、何を頼めばいいかがすぐ伝わるように、1ページ1ジャンルにし、上の写真の料理を品書きの1品目にそろえて「一押し」の判を押しました。縦書きに合わせて数字は漢数字にし、下の段に高さをそろえています。</p>
+        <p class="work__note">写真は画像生成AIで作成したイメージです。</p>
+      </div>
+      <div class="work__media">
+        <ul class="pages">
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p8.webp"><img src="images/izakaya-p8-400.webp" width="400" height="566" alt="表紙：和紙の地に縦書きの「お品書き」、三日月のロゴと店名、下に注意書き" loading="lazy"></a><figcaption>表紙</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p1.webp"><img src="images/izakaya-p1-400.webp" width="400" height="566" alt="おつまみのページ：枝豆の写真と縦書きの品書き" loading="lazy"></a><figcaption>おつまみ</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p2.webp"><img src="images/izakaya-p2-400.webp" width="400" height="566" alt="お刺身のページ：刺身の盛り合わせの写真と縦書きの品書き" loading="lazy"></a><figcaption>お刺身</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p3.webp"><img src="images/izakaya-p3-400.webp" width="400" height="566" alt="焼きもののページ：焼き鳥の写真と縦書きの品書き" loading="lazy"></a><figcaption>焼きもの</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p4.webp"><img src="images/izakaya-p4-400.webp" width="400" height="566" alt="揚げ物のページ：唐揚げの写真と縦書きの品書き" loading="lazy"></a><figcaption>揚げ物</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p5.webp"><img src="images/izakaya-p5-400.webp" width="400" height="566" alt="鉄板とご飯のページ：鉄鍋のペッパーライスの写真と縦書きの品書き" loading="lazy"></a><figcaption>鉄板とご飯</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p6.webp"><img src="images/izakaya-p6-400.webp" width="400" height="566" alt="甘味のページ：抹茶・あずき・白玉・アイスの写真と二段の品書き" loading="lazy"></a><figcaption>甘味</figcaption></figure></li>
+          <li><figure class="shot"><a class="shot__link" href="images/izakaya-p7.webp"><img src="images/izakaya-p7-400.webp" width="400" height="566" alt="ドリンクのページ：生ビールの写真と二段の品書き" loading="lazy"></a><figcaption>ドリンク</figcaption></figure></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 医療セミナーのポスター -->
+    <article class="work work--flip" id="poster" aria-labelledby="poster-title">
+      <div class="work__text">
+        <h2 class="work__title" id="poster-title">医療セミナーの<br>ポスター（A2）</h2>
+        <p class="work__name">「第12回 みなと循環器セミナー」（架空の会）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>構成・デザイン・印刷用データ（CMYK・塗り足し3mm・トンボ付きPDF、文字をアウトライン化した .ai）</dd>
+          <dt>使ったもの</dt><dd>Illustrator</dd>
+        </dl>
+        <p class="work__body">掲示の前を通りすぎる医師・メディカルスタッフにも「何の会が・いつ」が伝わるように、写真を使わず、会の名前・テーマ・日付を大きな文字で組みました。飾りは紙面を横切る心電図の線1本だけにし、赤はその1拍にだけ使っています。</p>
+        <p class="work__note">写真は使っていません。会の名前・会場・人名・QRコードなど、紙面の内容はすべて架空のダミーです。</p>
+      </div>
+      <div class="work__media">
+        <div class="poster">
+          <figure class="shot">
+            <a class="shot__link" href="images/poster.webp"><img src="images/poster-700.webp" width="700" height="990" alt="A2ポスターの全体：上に会の名前と大会テーマ「鼓動を、ともに支える。」、中央を横切る心電図の線、下の淡い青の面に開催日時・会場・大会長・ダミーのQRコード" loading="lazy"></a>
+            <figcaption>告知ポスター（A2縦 420×594mm・片面）</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/poster-line.webp"><img src="images/poster-line.webp" width="640" height="366" alt="心電図の線の拡大：青い線の途中の1拍だけが赤い" loading="lazy"></a>
+            <figcaption>線のほとんどは青で、1拍だけを赤にしました。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- Lumio -->
+    <article class="work work--far" id="lumio" aria-labelledby="lumio-title">
+      <div class="work__text">
+        <h2 class="work__title" id="lumio-title">美容サロンのLP</h2>
+        <p class="work__name">hair salon「Lumio」（架空のサロン）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>構成・文章・デザイン・コーディング・写真選び</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS / JavaScript</dd>
+        </dl>
+        <p class="work__body">髪質改善トリートメントを、平日の夜や土日に通う働く女性に向けて「乾かすだけで、朝がひとつ軽くなる。」と言い切りました。白と余白を広くとり、色は主役の写真のかすみ草の茎の緑を、予約ボタンなど要所だけに使っています。作ったお客様の声やビフォーアフターは載せていません。</p>
+        <p class="work__note">写真は素材サイト（Unsplash）のものです。</p>
+      </div>
+      <div class="work__media">
+        <div class="screens">
+          <figure class="shot shot--pc">
+            <a class="shot__link" href="images/lumio-pc.webp"><img src="images/lumio-pc-800.webp" srcset="images/lumio-pc-800.webp 800w, images/lumio-pc.webp 1280w" sizes="(min-width: 1024px) 46vw, (min-width: 768px) 70vw, 75vw" width="800" height="500" alt="Lumio のLPのファーストビュー（PC）。左に白い余白と「乾かすだけで、朝がひとつ軽くなる。」、右にかすみ草とロングヘアの写真" loading="lazy"></a>
+            <figcaption>PC</figcaption>
+          </figure>
+          <figure class="shot shot--sp">
+            <a class="shot__link" href="images/lumio-sp.webp"><img src="images/lumio-sp-400.webp" width="400" height="866" alt="Lumio のLPのファーストビュー（スマホ）" loading="lazy"></a>
+            <figcaption>スマホ</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- Clocca -->
+    <article class="work work--flip" id="clocca" aria-labelledby="clocca-title">
+      <div class="work__text">
+        <h2 class="work__title" id="clocca-title">企業向け<br>勤怠管理サービスのLP</h2>
+        <p class="work__name">勤怠管理ツール「Clocca」（架空のサービス）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>構成・文章・デザイン・コーディング・資料請求フォーム</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS / JavaScript</dd>
+        </dl>
+        <p class="work__body">Excelやタイムカードで勤怠を管理している中小企業の総務・人事の方に向けて、月末の集計の手間が減ることを、数字と比較表で順に納得してもらう構成にしました。管理画面とスマホの打刻画面のイメージは、写真を使わずHTML/CSSで作っています。</p>
+        <p class="work__note">写真は使っていません。ページ内の数字・社名・導入事例は、すべて架空のサンプルです。</p>
+      </div>
+      <div class="work__media">
+        <div class="screens">
+          <figure class="shot shot--pc">
+            <a class="shot__link" href="images/clocca-pc.webp"><img src="images/clocca-pc-800.webp" srcset="images/clocca-pc-800.webp 800w, images/clocca-pc.webp 1280w" sizes="(min-width: 1024px) 46vw, (min-width: 768px) 70vw, 75vw" width="800" height="500" alt="Clocca のLPのファーストビュー（PC）。「月末の勤怠集計を、20時間から2時間へ。」の見出しと、管理画面のイメージ" loading="lazy"></a>
+            <figcaption>PC</figcaption>
+          </figure>
+          <figure class="shot shot--sp">
+            <a class="shot__link" href="images/clocca-sp.webp"><img src="images/clocca-sp-400.webp" width="400" height="866" alt="Clocca のLPのファーストビュー（スマホ）" loading="lazy"></a>
+            <figcaption>スマホ</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- Milky Way -->
+    <article class="work" id="milkyway" aria-labelledby="milkyway-title">
+      <div class="work__text">
+        <h2 class="work__title" id="milkyway-title">アイサロンのLP</h2>
+        <p class="work__name">「Milky Way」（架空のサロン）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>構成・文章・デザイン・コーディング・画像の用意</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS / JavaScript</dd>
+        </dl>
+        <p class="work__body">まつ毛パーマ・眉毛パーマのサロンの想定したご要望「まつ育しながら綺麗に」を、選ぶ理由としてページの中心に置きました。「ロマンチックな店内」は、紫・黒・金の色と、バラ・蝶・アンティークの鏡のモチーフで表しています。効果を約束する言い方は使わず、「いたわる」「整える」と言い換えました。</p>
+        <p class="work__note">写真は画像生成AIで作成したイメージです。</p>
+      </div>
+      <div class="work__media">
+        <div class="screens">
+          <figure class="shot shot--pc">
+            <a class="shot__link" href="images/milkyway-pc.webp"><img src="images/milkyway-pc-800.webp" srcset="images/milkyway-pc-800.webp 800w, images/milkyway-pc.webp 1280w" sizes="(min-width: 1024px) 46vw, (min-width: 768px) 70vw, 75vw" width="800" height="500" alt="Milky Way のLPのファーストビュー（PC）。夜空色の背景に、アーチ型の金の額縁に入った写真" loading="lazy"></a>
+            <figcaption>PC</figcaption>
+          </figure>
+          <figure class="shot shot--sp">
+            <a class="shot__link" href="images/milkyway-sp.webp"><img src="images/milkyway-sp-400.webp" width="400" height="866" alt="Milky Way のLPのファーストビュー（スマホ）" loading="lazy"></a>
+            <figcaption>スマホ</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 果実工房こはる -->
+    <article class="work work--far" id="koharu" aria-labelledby="koharu-title">
+      <div class="work__text">
+        <h2 class="work__title" id="koharu-title">食品ギフトの<br>楽天市場の商品ページ</h2>
+        <p class="work__name">果実工房こはる「国産フルーツジュレ」（架空のお店・商品）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>スマホ用の縦長画像10枚、商品画像3枚、楽天にそのまま貼れるHTMLと登録用の文章</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS（画像の書き出し用）</dd>
+        </dl>
+        <p class="work__body">お歳暮やクリスマスの贈りものを探す方に向けて、「きちんとして見えて、誰にでも喜ばれる」ことを、果肉の写真とギフト対応で伝えました。楽天のスマホ用ページはCSSが使えないため、縦長の画像を分けて並べる形にし、1枚目の商品画像はガイドライン（文字は面積の20%以内・枠線なし）に合わせています。</p>
+        <p class="work__note">写真は画像生成AIで作成したイメージです。</p>
+      </div>
+      <div class="work__media">
+        <div class="slices">
+          <figure class="shot">
+            <a class="shot__link" href="images/koharu-sp1.webp"><img src="images/koharu-sp1-400.webp" width="400" height="942" alt="スマホ用の縦長画像1枚目：「果実ごろっと 国産フルーツジュレ」のキャッチと、箱に並んだ8個のジュレの写真" loading="lazy"></a>
+            <figcaption>スマホ用の縦長画像（1枚目／全10枚）</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/koharu-sp2.webp"><img src="images/koharu-sp2-400.webp" width="400" height="765" alt="スマホ用の縦長画像2枚目：お歳暮・クリスマスの季節の贈りもの" loading="lazy"></a>
+            <figcaption>（2枚目）</figcaption>
+          </figure>
+        </div>
+        <div class="thumbs">
+          <figure class="shot">
+            <a class="shot__link" href="images/koharu-thumb1.webp"><img src="images/koharu-thumb1-400.webp" width="400" height="400" alt="商品画像1枚目：木のテーブルの上の、8個入りのジュレの箱" loading="lazy"></a>
+            <figcaption>商品画像 1</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/koharu-thumb2.webp"><img src="images/koharu-thumb2-400.webp" width="400" height="400" alt="商品画像2枚目：白桃・マスカット・みかん・いちごの4つの味" loading="lazy"></a>
+            <figcaption>商品画像 2</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/koharu-thumb3.webp"><img src="images/koharu-thumb3-400.webp" width="400" height="400" alt="商品画像3枚目：リボンをかけたギフトの箱と、ギフト対応の案内" loading="lazy"></a>
+            <figcaption>商品画像 3</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="colophon">
+    <p>&copy; 2026 Shimapon Works</p>
+  </footer>
+
+  <dialog class="viewer" aria-label="画像の拡大表示">
+    <button class="viewer__close" type="button">閉じる</button>
+    <img class="viewer__img" alt="">
+  </dialog>
+
+  <script>
+    (() => {
+      const viewer = document.querySelector('.viewer');
+      if (!viewer || typeof viewer.showModal !== 'function') return;
+      const img = viewer.querySelector('.viewer__img');
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('.shot__link');
+        if (!link) return;
+        e.preventDefault();
+        img.src = link.getAttribute('href');
+        img.alt = link.querySelector('img').alt;
+        viewer.showModal();
+        viewer.scrollTop = 0;
+      });
+      viewer.addEventListener('click', (e) => {
+        if (e.target === viewer || e.target.closest('.viewer__close')) viewer.close();
+      });
+      viewer.addEventListener('close', () => { img.removeAttribute('src'); });
+    })();
+  </script>
+</body>
+</html>
