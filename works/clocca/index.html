@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>制作の解説：勤怠管理サービス「Clocca」のLP・広告バナー・展示会チラシ・資料の表紙｜Shimapon Works</title>
+  <meta name="description" content="「展示会で名刺は集まるのに商談にならない」「LPが他社と同じに見える」という勤怠管理サービスの想定の依頼に、LPの見直し・資料ダウンロード広告のバナー3案・ウェビナー告知・展示会チラシ・ホワイトペーパーの表紙で答えた作例です。">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="制作の解説：勤怠管理サービス「Clocca」のLP・広告バナー・展示会チラシ・資料の表紙｜Shimapon Works">
+  <meta property="og:description" content="「月末の勤怠集計を、作るから、確かめるへ。」のひと言で、LPから展示会チラシ・広告バナー・資料の表紙までそろえた、企業向けサービスの作例です。">
+  <link rel="canonical" href="https://shimaponworks.github.io/works/clocca/">
+  <meta property="og:url" content="https://shimaponworks.github.io/works/clocca/">
+  <meta property="og:image" content="https://shimaponworks.github.io/works/clocca/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20261015a">
+  <style>
+    /* このページだけ：画面は描いた枠に入れず、細い線1本で置く（Lumio・看護師の解説ページと同じ） */
+    .plain-hero { display: flex; align-items: flex-end; gap: clamp(0.5rem, 2vw, 1.25rem); margin: 2rem auto 0; max-width: 1000px; }
+    .plain-hero figure { flex: var(--r) 1 0; min-width: 0; margin: 0; }
+    .plain img, .plain-hero img { width: 100%; outline: 1px solid var(--line); outline-offset: -1px; background: #fff; }
+    .plain-hero figcaption, .plain figcaption { margin-top: 0.375rem; font-size: 0.75rem; line-height: 1.5; color: var(--text-sub); }
+    .shot__img.plain { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+    .shot__img.plain img { border-radius: 0; }
+
+    /* 依頼文の引用：本文より一段小さく、左に線1本 */
+    .brief { margin-top: 1.5rem; padding-left: 1rem; border-left: 2px solid var(--line); color: var(--text-sub); font-size: 0.9375rem; }
+    .brief p + p { margin-top: 0.5rem; }
+    .brief__title { font-weight: 700; color: var(--navy); }
+
+    /* 配色の見比べ：3案の画像を横に並べる */
+    .colors { margin-top: 1rem; }
+    .colors img { width: 100%; outline: 1px solid var(--line); outline-offset: -1px; }
+    .colors figcaption { margin-top: 0.375rem; font-size: 0.75rem; color: var(--text-sub); }
+
+    /* 販促物：媒体ごとに、画像と「課題・意図・工夫」 */
+    .kit { display: grid; gap: 3.5rem; }
+    .kit__item { display: grid; gap: 1.5rem; align-items: start; }
+    .kit__media { display: grid; gap: 0.75rem; align-items: start; }
+    .kit__media--two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .kit__banners { display: grid; gap: 1rem; }
+    .kit__banner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.911fr); gap: 0.5rem; align-items: start; margin: 0; }
+    .kit__banner figcaption { grid-column: 1 / -1; }
+    .kit__media a { display: block; }
+    .kit__media--paper { max-width: 30rem; }
+    .kit__media--cover { max-width: 16rem; }
+    .kit h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.6; color: var(--navy); }
+    .kit__size { margin-top: 0.25rem; font-size: 0.8125rem; color: var(--text-sub); }
+    .kit__cia { margin-top: 1rem; display: grid; gap: 0.625rem; }
+    .kit__cia div { display: grid; grid-template-columns: 3.5em minmax(0, 1fr); gap: 0.75rem; }
+    .kit__cia dt { font-weight: 700; color: var(--blue-dark); }
+    .kit__cia dd { margin: 0; color: var(--text-sub); }
+    @media (min-width: 1024px) {
+      .kit__item { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2.5rem; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8.1-6C21.6 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../../">Shimapon Works</a>
+      <nav aria-label="メニュー">
+        <ul class="nav">
+          <li><a href="../../#works">実績</a></li>
+          <li><a href="../../#price">料金</a></li>
+          <li><a href="../../#faq">質問</a></li>
+          <li><a class="nav__cta" href="#contact">相談する</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== タイトル ===== -->
+    <section class="case-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="現在の位置">
+          <ol>
+            <li><a href="../../">トップ</a></li>
+            <li><a href="../../#works">制作実績</a></li>
+            <li aria-current="page">Clocca</li>
+          </ol>
+        </nav>
+        <p class="case-hero__tag">制作の解説｜LPの見直し・広告バナー・展示会チラシ・資料の表紙・企業向けサービス</p>
+        <h1 class="case-hero__title"><span>勤怠管理サービス</span><span>「Clocca」の</span><span>LPと販促物</span></h1>
+        <p class="case-hero__lead">「展示会で名刺は集まるのに、商談にならない」「LPが他社と同じに見える」という想定の依頼に、<br class="pc-only">LPの見直し・資料ダウンロード広告のバナー3案・ウェビナー告知・展示会チラシ・資料の表紙で答えました。</p>
+        <div class="plain-hero">
+          <figure style="--r: 1.6"><img src="images/hero-pc.webp" width="1000" height="625" alt="Clocca のLPのファーストビューを、パソコンで表示したところ。左に「月末の勤怠集計を、作るから、確かめるへ。」、右に締めの確認画面と赤い確認印" fetchpriority="high"><figcaption>PC</figcaption></figure>
+          <figure style="--r: 0.707"><img src="images/flyer.webp" width="800" height="1131" alt="A4縦の展示会チラシの表面" fetchpriority="high"><figcaption>チラシ</figcaption></figure>
+          <figure style="--r: 0.462"><img src="images/hero-sp.webp" width="400" height="866" alt="Clocca のLPを、スマホで表示したところ" fetchpriority="high"><figcaption>スマホ</figcaption></figure>
+        </div>
+        <dl class="case-meta">
+          <div><dt>業種</dt><dd>企業向けのクラウド勤怠管理サービス（中小企業の総務・人事向け）</dd></div>
+          <div><dt>制作物</dt><dd>LPの見直し、資料ダウンロード広告のバナー3案（1080×1080・1200×628）、ウェビナー告知バナー、展示会チラシ（A4両面）、ホワイトペーパーの表紙（A4縦）</dd></div>
+          <div><dt>担当範囲</dt><dd>キャッチコピー・構成・文章・デザイン・コーディング・印刷用データ</dd></div>
+          <div><dt>使ったもの</dt><dd>HTML / CSS / JavaScript（バナー・チラシ・表紙もHTML/CSSで組んで書き出し）。写真は使っていません</dd></div>
+        </dl>
+        <p class="case-note">※実際の募集の形をまねた架空の依頼をもとに、練習として制作したサンプルです。サービス名・会社名・展示会名・URL・電話番号・画面の中の名前と数字は、すべて架空です。</p>
+        <a class="btn btn--outline-dark" href="https://shimaponworks.github.io/clocca/" target="_blank" rel="noopener">完成したLPを見る</a>
+      </div>
+    </section>
+
+    <!-- ===== 依頼文（課題） ===== -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Brief</p>
+          <h2 class="heading__ja">想定した依頼</h2>
+        </div>
+        <ul class="request">
+          <li><span>依頼主</span>中小企業向けのクラウド勤怠管理を提供する会社（社員約25名）。マーケティング担当は1名で、社内にデザイナーはいない</li>
+          <li><span>困りごと</span>以前の展示会では名刺は集まったが、商談につながったのはごく一部。営業からは「LPが他の勤怠システムと同じに見える」と言われている。LPに並べている導入企業のロゴや数字は、掲載の許可が取れていない仮の内容</li>
+          <li><span>誰に</span>従業員10〜300名の中小企業の総務・人事の担当者。Excelやタイムカードで勤怠を管理していて、月末の集計に追われている。決めるのは社長・役員なので、社内で説明しやすい材料がほしい</li>
+          <li><span>作るもの</span>LPの見直し、資料ダウンロード広告のバナー、展示会チラシ、ホワイトペーパーの表紙、ウェビナー告知バナー。すべて同じトーンで</li>
+        </ul>
+        <div class="brief">
+          <p class="brief__title">依頼の中の、ちょっと困った要望</p>
+          <p>「大手の勤怠システムの名前を出して、比較表で勝っているところを見せたい。『業界最安』『導入社数No.1』も入れられないか」「展示会チラシに、機能を全部載せたい」</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 決めたこと ===== -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Decision</p>
+          <h2 class="heading__ja">決めたこと</h2>
+        </div>
+        <ol class="thinking">
+          <li>
+            <h3>伝えたいことは、ひとつ。月末の集計を「作る」から「確かめる」へ</h3>
+            <p>総務の担当者がいちばん困っているのは、月末にタイムカードやExcelを見ながら集計表を作る時間です。Cloccaでは毎日の打刻がその日のうちにまとまるので、月末にするのは<strong>数字を見直して締めること</strong>になります。この変化ひとつに、ページも販促物もしぼりました。</p>
+          </li>
+          <li>
+            <h3>コピーは「月末の勤怠集計を、作るから、確かめるへ。」</h3>
+            <p>最初に出した「月末の勤怠集計を、手作業から自動へ。」などの案は、「普通すぎる」という判断でした。案を重ねて、作業の<strong>動詞が変わる</strong>ことをそのまま言葉にしたこの形に決めています。広告バナーでは、一瞬で伝える「さよなら、タイムカードの山。」と、管理の不安から入る「残業も有給も、月の途中で確かめる。」の案も作りました。</p>
+          </li>
+          <li>
+            <h3>色は、事務用紙の灰とネイビーに、確認印の赤を2か所だけ</h3>
+            <p>勤怠のサービスは明るい青が多く、「他社と同じに見える」原因のひとつでした。今の青を活かす案・朱を使う案など4案を見比べて、地を事務用紙のような薄い灰、文字とボタンを依頼主が残したいネイビーに。深めの赤は、<strong>確認印</strong>と「<strong>確かめる</strong>」の文字の2か所だけに使い、LPと販促物のすべてで同じ使い方にそろえました。</p>
+            <figure class="colors"><img src="images/colors.webp" width="1000" height="436" alt="配色の見比べ。左から、淡い青とブルーの案、薄い灰と深い朱の案、薄い灰とネイビーのボタンに赤を2か所だけ使う案（採用）" loading="lazy"><figcaption>見比べた配色の一部（右が採用した案）</figcaption></figure>
+          </li>
+          <li>
+            <h3>困った要望には、できる形で答える</h3>
+            <p>根拠のない「業界最安」「No.1」は書けず、他社の名前を出した比較は、公平な比べ方と最新の根拠が必要になるため勧めませんでした。比べる相手は<strong>「Excel・タイムカードで管理している今」</strong>にしています。展示会チラシは、表面を「何のサービスで、誰の何が楽になるか」と料金だけにし、機能は裏面へ、詳しい内容はQRコードから資料ダウンロードへ送る形にしました。掲載の許可がない導入企業のロゴ・数字・お客様の声は外し、かわりに「締めの日の比べ方」「資料で確かめられること」「始めるまで」を置いています。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== LPで工夫したこと ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="heading">
+          <p class="heading__en">Design</p>
+          <h2 class="heading__ja">LPで工夫したこと</h2>
+          <p class="heading__lead">スマホで見たときの画面です。</p>
+        </div>
+        <ul class="points-grid">
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/fv.webp" width="640" height="1024" alt="ファーストビュー：「月末の勤怠集計を、作るから、確かめるへ。」の見出しと資料ダウンロードのボタン、下に締めの確認画面" loading="lazy"></figure>
+            <h3>言葉と「締めの確認画面」を対にする</h3>
+            <p>見出しのすぐ下に、確認が必要な2件に印が付いた「10月分の締め」の画面を置きました。画面はHTMLで組み、ブラウザの窓やスマホの枠は描かずに、白い面と細い線だけで見せています。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/diff.webp" width="640" height="1024" alt="締めの日を、比べると：打刻の記録・打刻もれ・残業・有給・給与計算への5つの作業を、これまでとCloccaで並べた表" loading="lazy"></figure>
+            <h3>比べる相手は、Excel・タイムカード</h3>
+            <p>締めの日の5つの作業を、「これまで（作る）」と「Clocca（確かめる）」で並べました。他社の名前や根拠のない数字を使わずに、違いが伝わるようにしています。ページの背骨になる部分なので、余白もここだけ大きくとりました。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/daily.webp" width="640" height="1024" alt="毎日、Cloccaがしておくこと：スマホ・PCで打刻、残業のお知らせなど4つの機能と、打刻画面のイメージ" loading="lazy"></figure>
+            <h3>機能は「毎日しておくこと」として4つ</h3>
+            <p>依頼文の必須の機能4つを、カードに並べず、線で区切った一覧にしました。打刻と残業のお知らせだけ、小さな画面のイメージを添えています。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/price.webp" width="640" height="1024" alt="料金：初期費用0円、ライト200円・スタンダード300円・プロ450円（1人あたり月額・税抜）と、できること" loading="lazy"></figure>
+            <h3>料金は表で、「いちばん人気」は付けない</h3>
+            <p>3つのプランを白い表にまとめ、税抜・最低利用料金・無料トライアルのあと自動で有料にならないことを書きました。根拠のない「いちばん人気」の印は外しています。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 販促物 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="heading">
+          <p class="heading__en">Promotion</p>
+          <h2 class="heading__ja">販促物も、同じルールで</h2>
+          <p class="heading__lead">地の色・見出しの組み方・線の使い方・画面の見せ方・赤を使う場所を、LPと同じルールでそろえました。<br class="pc-only">画像を押すと、大きく表示します。</p>
+        </div>
+        <div class="kit">
+
+          <article class="kit__item">
+            <div class="kit__banners plain">
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-1-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-1-sq.webp" width="800" height="800" alt="バナー案1（正方形）：上に「月末の勤怠集計を、作るから、確かめるへ。」、下に締めの確認画面と確認印" loading="lazy"></a>
+                <a href="images/banner-1-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-1-wide.webp" width="800" height="419" alt="バナー案1（横長）：左に言葉と資料ダウンロードのボタン、右に締めの確認画面" loading="lazy"></a>
+                <figcaption>案1　主役のコピーで伝える</figcaption>
+              </figure>
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-2-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-2-sq.webp" width="800" height="800" alt="バナー案2（正方形）：大きな文字で「さよなら、タイムカードの山。」と、重なったタイムカードの束" loading="lazy"></a>
+                <a href="images/banner-2-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-2-wide.webp" width="800" height="419" alt="バナー案2（横長）：左に「さよなら、タイムカードの山。」、右にタイムカードの束" loading="lazy"></a>
+                <figcaption>案2　一瞬で伝える</figcaption>
+              </figure>
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-3-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-3-sq.webp" width="800" height="800" alt="バナー案3（正方形）：「残業も有給も、月の途中で確かめる。」と、基準に近い人・有給の取得が済んでいない人の一覧画面" loading="lazy"></a>
+                <a href="images/banner-3-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-3-wide.webp" width="800" height="419" alt="バナー案3（横長）：左に言葉、右半分に月の途中の確認画面" loading="lazy"></a>
+                <figcaption>案3　管理の不安から入る（3案とも 1080×1080 と 1200×628）</figcaption>
+              </figure>
+            </div>
+            <div>
+              <h3>資料ダウンロード広告のバナー（伝え方の違う3案）</h3>
+              <p class="kit__size">1080×1080（SNS広告）と 1200×628（SNS・ディスプレイ広告）</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>広告はクリックされても、資料ダウンロードまで進む人が少ない</dd></div>
+                <div><dt>意図</dt><dd>押す前から「何の資料か」「自分の困りごとか」がわかるように、主役のコピー・タイムカードの山・月の途中の確認と、入口の違う3案を作りました。実際の広告では、反応を比べて絞り込みます</dd></div>
+                <div><dt>工夫</dt><dd>構図も変えています（言葉と確認画面／大きな文字とタイムカードの束／画面を大きく）。ボタンはどれも「資料をダウンロード（無料）」にそろえ、横長と正方形で配置を組み直しました（拡大・縮小だけにはしていません）</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="kit__item">
+            <div class="kit__media kit__media--two kit__media--paper plain">
+              <a href="images/flyer-large.webp" target="_blank" rel="noopener"><img src="images/flyer.webp" width="800" height="1131" alt="展示会チラシの表面：「月末の勤怠集計を、作るから、確かめるへ。」、締めの確認画面、初期費用0円・1人あたり月200円から・30日間無料の3つ" loading="lazy"></a>
+              <a href="images/flyer-back-large.webp" target="_blank" rel="noopener"><img src="images/flyer-back.webp" width="800" height="1131" alt="展示会チラシの裏面：締めの日の比べ方の表、4つの機能、料金表、資料ページのQRコードの位置と連絡先" loading="lazy"></a>
+            </div>
+            <div>
+              <h3>展示会のチラシ</h3>
+              <p class="kit__size">A4・両面／塗り足し3mmとトンボ付きのPDF（2ページ）</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>ブースの前で「何のサービスか」が伝わらず、名刺が商談につながらなかった</dd></div>
+                <div><dt>意図</dt><dd>ブースの前で読まれるのは数秒なので、表面は言葉と確認画面と料金の3つだけ。機能・比べ方・料金表は裏面に置き、詳しい内容はQRコードから資料ダウンロードへ送ります</dd></div>
+                <div><dt>工夫</dt><dd>「機能を全部載せたい」というご要望には、裏面の4つの機能と資料へ分けて答えました。QRコードは入稿のときに本物と差し替える前提の仮の枠です。いちばん小さい文字も8pt以上にしています</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="kit__item">
+            <div class="kit__media kit__media--cover plain">
+              <a href="images/cover-large.webp" target="_blank" rel="noopener"><img src="images/cover.webp" width="800" height="1131" alt="ホワイトペーパーの表紙：「月末の勤怠集計を、作るから、確かめるへ。」、1日から31日までの印字の列、タイトル「Excel勤怠から移る前に確認したい10のこと」と赤い確認印" loading="lazy"></a>
+            </div>
+            <div>
+              <h3>ホワイトペーパー（資料）の表紙</h3>
+              <p class="kit__size">A4縦／PNGと、塗り足し3mm・トンボ付きのPDF</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>中身は社内でPowerPointで作るので、表紙だけで「この会社の資料」とわかるようにしたい</dd></div>
+                <div><dt>意図</dt><dd>LP・チラシと同じ主役のコピーを上に、資料のタイトル「Excel勤怠から移る前に確認したい10のこと」を下に置き、社内で回覧されても何の資料かがわかるようにしました</dd></div>
+                <div><dt>工夫</dt><dd>タイムカードの印字のような1日〜31日の数字の列と、「確認」の印を添えました。LPの「資料」の欄にも、この表紙をそのまま使っています</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="kit__item">
+            <div class="kit__media plain">
+              <a href="images/webinar-large.webp" target="_blank" rel="noopener"><img src="images/webinar.webp" width="800" height="419" alt="ウェビナー告知バナー：「月末の勤怠締めを早くする 3つの見直し」、2026年12月9日（水）12:00から12:45、オンライン・参加無料、お話しする3つのこと" loading="lazy"></a>
+            </div>
+            <div>
+              <h3>ウェビナーの告知バナー</h3>
+              <p class="kit__size">1200×628（告知ページ・SNS）</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>昼休みの45分のオンラインセミナーに、総務の担当者を集めたい</dd></div>
+                <div><dt>意図</dt><dd>タイトルと日時を大きく、右に「この45分でお話しすること」を3行で。参加して何がわかるかを先に見せました</dd></div>
+                <div><dt>工夫</dt><dd>日時はタイムカードと同じ等幅の数字にし、話す3つのことは白い表に。日時は架空と明記しています</dd></div>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 確認したこと ===== -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Check</p>
+          <h2 class="heading__ja">確認したこと</h2>
+        </div>
+        <ul class="check-list">
+          <li><strong>表示のルール</strong>導入社数・削減時間・継続率などの数字、導入事例・お客様の声、「No.1」「業界最安」「いちばん人気」、他社の名前を使った比較がないことを確認しました。法改正については「設定の項目を更新してお知らせする」までにとどめ、就業規則への当てはめは専門家と確認するよう添えています。</li>
+          <li><strong>内容をそろえる</strong>料金（初期費用0円・1人あたり月200円から・税抜・最低利用料金 月3,000円・30日間無料）と4つの機能は、LPとチラシで同じ内容です。</li>
+          <li><strong>全体の統一感</strong>薄い灰の地、白は画面と表だけ、見出しの組み方、線の太さ、赤は確認印と「確かめる」だけ、というルールを決め、LPと4種類の販促物のすべてで同じかを確認しました。</li>
+          <li><strong>架空の情報であること</strong>URL・電話番号・展示会名・画面の中の名前は、実在のものを指さない書き方にしています。QRコードは仮の枠で、本物は入れていません。各画像の隅に「架空のサービスのサンプルです」と入れました。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 次の作品・相談 ===== -->
+    <section class="case-next">
+      <div class="container">
+        <a class="case-next__link" href="../nanayu/">
+          <span class="case-next__label">次の解説</span>
+          <span class="case-next__title">健康センター「なな湯」のLP・チラシ・Instagram</span>
+        </a>
+        <a class="case-next__back" href="../../#works">制作実績の一覧に戻る</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <p class="heading__en heading__en--light">Contact</p>
+        <h2 class="contact__title">LPと展示会・広告の販促物を<br class="sp-only">まとめて相談したい方へ</h2>
+        <p class="contact__text">「まだ何も決まっていない」段階でも、<br class="sp-only">大丈夫です。<br>ご相談・お見積りは無料です。</p>
+        <div class="contact__buttons">
+          <a class="btn btn--line btn--lg" href="https://lin.ee/WGGFmbW" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-line"/></svg>LINEで相談する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="brand brand--footer">Shimapon Works</p>
+      <small>&copy; Shimapon Works</small>
+    </div>
+  </footer>
+  <script src="../../js/main.js?v=20261012" defer></script>
+</body>
+</html>
