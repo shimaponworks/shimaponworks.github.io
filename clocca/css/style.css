@@ -337,3 +337,6 @@ table { border-collapse: collapse; }
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
 }
 .toast.is-show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+
+/* 文節で折り返す（320pxで「月末に／するのは」と切れないように。2026-10-18） */
+.nb { display: inline-block; }
