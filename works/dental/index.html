@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>制作の解説：歯科医院の定期健診セット（案内LP・バナー・チラシ）｜Shimapon Works</title>
+  <meta name="description" content="「治療が終わると、定期健診に戻ってこない」という歯科医院の想定の依頼に、定期健診の案内LP・バナー3案・院内とご近所に置くチラシで答えた作例です。依頼文から、決めたこと、医療広告で気をつけたことまでを順に解説します。">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="制作の解説：歯科医院の定期健診セット（案内LP・バナー・チラシ）｜Shimapon Works">
+  <meta property="og:description" content="痛む前に、みがく。削る前に、守る。「健診の日は削らない・約45分」を伝える、定期健診の案内LP・バナー3案・チラシ。想定の依頼文に答えて作った作例です。">
+  <link rel="canonical" href="https://shimaponworks.github.io/works/dental/">
+  <meta property="og:url" content="https://shimaponworks.github.io/works/dental/">
+  <meta property="og:image" content="https://shimaponworks.github.io/works/dental/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20261015a">
+  <style>
+    /* このページだけ：画面は描いた枠に入れず、細い線1本で置く（Lumio の解説ページと同じ） */
+    .plain-hero { display: flex; align-items: flex-end; gap: clamp(0.5rem, 2vw, 1.25rem); margin: 2rem auto 0; max-width: 1000px; }
+    .plain-hero figure { flex: var(--r) 1 0; min-width: 0; margin: 0; }
+    .plain img, .plain-hero img { width: 100%; outline: 1px solid var(--line); outline-offset: -1px; background: #fff; }
+    .plain-hero figcaption, .plain figcaption { margin-top: 0.375rem; font-size: 0.75rem; line-height: 1.5; color: var(--text-sub); }
+    .shot__img.plain { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+    .shot__img.plain img { border-radius: 0; }
+
+    /* 依頼文の引用：本文より一段小さく、左に線1本 */
+    .brief { margin-top: 1.5rem; padding-left: 1rem; border-left: 2px solid var(--line); color: var(--text-sub); font-size: 0.9375rem; }
+    .brief p + p { margin-top: 0.5rem; }
+    .brief__title { font-weight: 700; color: var(--navy); }
+
+    /* 販促物：媒体ごとに、画像と「課題・意図・工夫」 */
+    .kit { display: grid; gap: 3.5rem; }
+    .kit__item { display: grid; gap: 1.5rem; align-items: start; }
+    .kit__media { display: grid; gap: 0.75rem; align-items: start; }
+    .kit__banners { display: grid; gap: 1rem; }
+    .kit__banner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.911fr); gap: 0.5rem; align-items: start; margin: 0; }
+    .kit__banner figcaption { grid-column: 1 / -1; }
+    .kit__media a { display: block; }
+    .kit__media--flyer { max-width: 24rem; }
+    .kit h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.6; color: var(--navy); }
+    .kit__size { margin-top: 0.25rem; font-size: 0.8125rem; color: var(--text-sub); }
+    .kit__cia { margin-top: 1rem; display: grid; gap: 0.625rem; }
+    .kit__cia div { display: grid; grid-template-columns: 3.5em 1fr; gap: 0.75rem; }
+    .kit__cia dt { font-weight: 700; color: var(--blue-dark); }
+    .kit__cia dd { margin: 0; color: var(--text-sub); }
+    @media (min-width: 1024px) {
+      .kit__item { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2.5rem; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8.1-6C21.6 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../../">Shimapon Works</a>
+      <nav aria-label="メニュー">
+        <ul class="nav">
+          <li><a href="../../#works">実績</a></li>
+          <li><a href="../../#price">料金</a></li>
+          <li><a href="../../#faq">質問</a></li>
+          <li><a class="nav__cta" href="#contact">相談する</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== タイトル ===== -->
+    <section class="case-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="現在の位置">
+          <ol>
+            <li><a href="../../">トップ</a></li>
+            <li><a href="../../#works">制作実績</a></li>
+            <li aria-current="page">歯科医院の定期健診セット</li>
+          </ol>
+        </nav>
+        <p class="case-hero__tag">制作の解説｜案内LP・バナー・チラシ・歯科医院</p>
+        <h1 class="case-hero__title"><span>歯科医院の</span><span>定期健診セット</span></h1>
+        <p class="case-hero__lead">「治療が終わると、定期健診に戻ってこない」という想定の依頼に、<br class="pc-only">定期健診の案内LP・バナー3案・院内とご近所に置くチラシで答えました。</p>
+        <div class="plain-hero">
+          <figure style="--r: 1.6"><img src="images/hero-pc.webp" width="1000" height="625" alt="案内LPのファーストビューを、パソコンで表示したところ。左に「痛む前に、みがく。削る前に、守る。」の見出しと予約のボタン、右にガラス瓶に立てた竹の歯ブラシ2本" fetchpriority="high"><figcaption>LP（PC）</figcaption></figure>
+          <figure style="--r: 0.707"><img src="images/flyer.webp" width="800" height="1131" alt="A4縦の定期健診のチラシ" fetchpriority="high"><figcaption>チラシ</figcaption></figure>
+          <figure style="--r: 0.462"><img src="images/hero-sp.webp" width="400" height="866" alt="案内LPを、スマホで表示したところ" fetchpriority="high"><figcaption>LP（スマホ）</figcaption></figure>
+        </div>
+        <dl class="case-meta">
+          <div><dt>業種</dt><dd>歯科医院（歯科・小児歯科）の定期健診の案内</dd></div>
+          <div><dt>制作物</dt><dd>定期健診の案内LP（ホワイトニングの段あり）、バナー3案（1080×1080・1200×628）、院内とご近所に置くチラシ（A4片面）</dd></div>
+          <div><dt>担当範囲</dt><dd>キャッチコピー・構成・文章・デザイン・コーディング・写真選びと加工・印刷用データ</dd></div>
+          <div><dt>使ったもの</dt><dd>HTML / CSS / JavaScript（バナーとチラシもHTML/CSSで組んで書き出し）</dd></div>
+        </dl>
+        <p class="case-note">※実際の募集の形をまねた架空の依頼をもとに、練習として制作したサンプルです。医院名・住所・電話番号・URLはすべて架空です。費用などの数字は、医院からいただく数字を入れる枠の形で示しています。<br>※写真は素材サイト（Unsplash）のイメージです。実際の医院・スタッフ・患者さんの写真ではありません。スマホに映っている予約画面は、制作側で作った架空のものです。</p>
+        <a class="btn btn--outline-dark" href="https://shimaponworks.github.io/dental/" target="_blank" rel="noopener">完成したLPを見る</a>
+      </div>
+    </section>
+
+    <!-- ===== 依頼文（課題） ===== -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Brief</p>
+          <h2 class="heading__ja">想定した依頼</h2>
+        </div>
+        <ul class="request">
+          <li><span>依頼主</span>駅から徒歩8分、スーパーの隣にある歯科医院（歯科・小児歯科）。今年からホワイトニング（自由診療）も始めた</li>
+          <li><span>困りごと</span>治療が終わると、3〜6か月ごとの定期健診に戻ってこない。「痛いことをされそう」「行くと虫歯が見つかって長く通うことになる」と思われていて、健診だけで来ていいことが伝わっていない。予約が電話だけで、昼間に電話しにくい働く世代が予約しにくい</li>
+          <li><span>誰に</span>治療が終わった30〜50代の働いている方、子どもの歯の健診で迷っている保護者（年齢・性別は限らない）</li>
+          <li><span>作るもの</span>定期健診の案内LP（ホワイトニングの段あり）、Instagram・ホームページ用のバナー2サイズ、受付で手渡しし、待合室とスーパーの掲示板にも貼るA4のチラシ。3つとも同じデザインで</li>
+        </ul>
+        <div class="brief">
+          <p class="brief__title">依頼の中の、ちょっと困った要望</p>
+          <p>「ホワイトニングのビフォーアフター写真と『全然痛くなかった！』という声を載せたい」「チラシとバナーに『痛くない治療』『地域No.1の設備』『最新の機械』と大きく」「ホワイトニングを『初回◯◯円！今だけ半額』といちばん大きく」「『予防歯科』を診療科名として並べたい」</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 決めたこと ===== -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Decision</p>
+          <h2 class="heading__ja">決めたこと</h2>
+        </div>
+        <ol class="thinking">
+          <li>
+            <h3>伝えたいことは、ひとつ。「痛くなる前に来る健診は、削らない・短い」</h3>
+            <p>戻ってこない理由のうち、いちばん大きいのは「行くと長く通うことになる」という不安でした。そこで最初に消す不安をこれに決め、<strong>健診の日は削らない</strong>こと（治療が必要なときは、説明してから次回に）と、<strong>1回 約45分</strong>という短さを、根拠として必ず添えることにしました。</p>
+          </li>
+          <li>
+            <h3>コピーは「痛む前に、みがく。削る前に、守る。」</h3>
+            <p>健診を「削られに行く日」ではなく「守りに寄る日」として言い切りました。添える1行は「ちょっと寄って、ずっと守る。こもれび歯科の定期健診」。バナーでは、言い方を変えた「虫歯を探す日じゃなく、守る日。」と、Web予約を入口にした「次の健診は、スマホで決める。」の案も作っています。</p>
+          </li>
+          <li>
+            <h3>色は、9回見比べて「ごく薄い桃の地にローズ」</h3>
+            <p>依頼のNGは「水色と歯のキャラクター」一辺倒。医院名の「こもれび」から、葉の影と光の色を探しました。緑、桃と緑、黄色と見比べていくなかで、黄色は歯の黄ばみを連想させるのでやめ、<strong>ごく薄い桃の地に、ローズの下線と、暖かい墨の文字</strong>に決めています。葉の影の写真を地に重ねた「木漏れ日」は、入口（最初の画面）と予約の欄の2か所だけに使いました。</p>
+          </li>
+          <li>
+            <h3>困った要望には、医療広告の決まりの中で答える</h3>
+            <p>患者さんの体験談やビフォーアフターは載せず、「痛くない」「No.1」「最新」も使っていません。代わりに「健診の日は削りません」「1回 約45分」という<strong>事実</strong>で不安に答えています。ホワイトニング（自由診療）は、限定解除の要件（内容・回数・期間・費用・リスクと副作用・問い合わせ先）をそろえて書けるLPの中だけで案内し、チラシとバナーには載せていません。「予防歯科」は診療科名にせず、「予防のための健診」と内容として書きました。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== LPで工夫したこと ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="heading">
+          <p class="heading__en">Design</p>
+          <h2 class="heading__ja">LPで工夫したこと</h2>
+          <p class="heading__lead">スマホで見たときの画面です。</p>
+        </div>
+        <ul class="points-grid">
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/fv.webp" width="640" height="1024" alt="ファーストビュー：葉の影が落ちる淡い桃の地に「痛む前に、みがく。削る前に、守る。」の見出し、約45分と削らないことの一文、予約のボタン" loading="lazy"></figure>
+            <h3>最初の画面は、言葉と2つの事実</h3>
+            <p>見出しのすぐ下に「1回 約45分」「健診の日は削りません」。葉の影の写真を地の色に重ねて、医院名の「こもれび」を背景にしました。予約のボタンだけを墨の面にしています。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/checkup.webp" width="640" height="1024" alt="健診の日にすること：「健診の日は、削りません。」の見出しと、チェック・クリーニング・みがき方のアドバイスの3つ、大きな「約45分」" loading="lazy"></figure>
+            <h3>健診でやることを、3つだけ</h3>
+            <p>歯と歯ぐきのチェック、歯石の除去とクリーニング、歯みがきの仕方のアドバイス。この段には写真を置かず、番号やアイコンも使わずに、線で区切って読ませました。大きな「約45分」には、目安であることと、次の健診の時期（3〜6か月後）を添えています。写真は最初の画面の1か所だけです。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/whitening.webp" width="640" height="1024" alt="ホワイトニング（自由診療）：内容・回数の目安・期間の目安・費用・主なリスクと副作用・問い合わせ先を、同じ表に同じ大きさで" loading="lazy"></figure>
+            <h3>ホワイトニングは、6つを同じ大きさで</h3>
+            <p>自由診療の詳しい内容は、内容・回数・期間・費用（税込）・主なリスクと副作用・問い合わせ先をそろえて書くことが条件です。費用だけが目立たないよう、ひとつの表に同じ文字の大きさで並べました。数字は医院からいただく前提で、枠だけを示しています。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/reserve.webp" width="640" height="1024" alt="健診の予約：「次の健診を、いま決めておく。」の見出しと電話番号、Web予約のフォーム" loading="lazy"></figure>
+            <h3>電話がしにくい人のために、Web予約を</h3>
+            <p>予約の欄にも、最初の画面と同じ木漏れ日を敷きました。電話番号を大きく出したうえで、昼間に電話しにくい方がその場で申し込めるフォームを置いています（デモのため送信はされません）。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== バナー・チラシ ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="heading">
+          <p class="heading__en">Promotion</p>
+          <h2 class="heading__ja">バナーとチラシも、同じルールで</h2>
+          <p class="heading__lead">地の色・木漏れ日の使い方・見出しの組み方・墨のボタンを、LPと同じルールでそろえました。<br class="pc-only">画像を押すと、大きく表示します。</p>
+        </div>
+        <div class="kit">
+
+          <article class="kit__item">
+            <div class="kit__banners plain">
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-1-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-1-sq.webp" width="800" height="800" alt="バナー案1（正方形）：「痛む前に、みがく。削る前に、守る。」と、右下にガラス瓶に立てた竹の歯ブラシ2本" loading="lazy"></a>
+                <a href="images/banner-1-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-1-wide.webp" width="800" height="419" alt="バナー案1（横長）：左に見出し、右にガラス瓶に立てた竹の歯ブラシ2本" loading="lazy"></a>
+                <figcaption>案1　見出しで伝える</figcaption>
+              </figure>
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-2-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-2-sq.webp" width="800" height="800" alt="バナー案2（正方形）：大きな文字で「虫歯を探す日じゃなく、守る日。」と、削らない・約45分の説明" loading="lazy"></a>
+                <a href="images/banner-2-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-2-wide.webp" width="800" height="419" alt="バナー案2（横長）：「虫歯を探す日じゃなく、守る日。」" loading="lazy"></a>
+                <figcaption>案2　言い方を変えて伝える（写真を使わず、文字と木漏れ日だけ）</figcaption>
+              </figure>
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-3-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-3-sq.webp" width="800" height="800" alt="バナー案3（正方形）：「次の健診は、スマホで決める。」と、予約画面が映ったスマホを持つ手" loading="lazy"></a>
+                <a href="images/banner-3-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-3-wide.webp" width="800" height="419" alt="バナー案3（横長）：左に言葉、右に予約画面が映ったスマホを持つ手" loading="lazy"></a>
+                <figcaption>案3　Web予約を入口にする（3案とも 1080×1080 と 1200×628）</figcaption>
+              </figure>
+            </div>
+            <div>
+              <h3>バナー（伝え方の違う3案）</h3>
+              <p class="kit__size">1080×1080（Instagram・Googleマップの投稿）と 1200×628（ホームページのトップ・Web広告）</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>タイムラインや地図の投稿では、ひと目で「歯医者の健診の話だ」とわかってもらう必要がある</dd></div>
+                <div><dt>意図</dt><dd>見出し・言い換え・Web予約と入口を変えた3案を作り、反応を比べられるようにしました。費用は載せていません</dd></div>
+                <div><dt>工夫</dt><dd>案3では、スマホの画面に架空の予約画面（曜日・時間の候補・予約ボタン）をはめ込み、手とスマホを写真から切り抜いて地の上に置きました。3案とも医院名・ロゴ・「Webで予約できます」を入れています</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="kit__item">
+            <div class="kit__media kit__media--flyer plain">
+              <a href="images/flyer-large.webp" target="_blank" rel="noopener"><img src="images/flyer.webp" width="800" height="1131" alt="A4縦の定期健診のチラシ。上に見出しと、ガラス瓶に立てた竹の歯ブラシ2本、中段に健診でやることと約45分、下に電話番号・Web予約・診療時間" loading="lazy"></a>
+            </div>
+            <div>
+              <h3>院内とご近所に置くチラシ</h3>
+              <p class="kit__size">A4縦・片面／塗り足し3mmとトンボ付きのPDF</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>受付で治療の終わった方に手渡しし、待合室やスーパーの掲示板にも貼る</dd></div>
+                <div><dt>意図</dt><dd>上はLPと同じ言葉で目を止め、真ん中で健診の中身と時間、下で予約の仕方を読んでもらう</dd></div>
+                <div><dt>工夫</dt><dd>木漏れ日は上（見出し）と下（予約）の2か所だけ。ホワイトニング（自由診療）は、チラシでは限定解除の要件をそろえられないので載せず、LPだけで案内しています。いちばん小さい文字も8pt以上、紙の端から9mm以上内側に置いています</dd></div>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 確認したこと ===== -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Check</p>
+          <h2 class="heading__ja">確認したこと</h2>
+        </div>
+        <ul class="check-list">
+          <li><strong>医療広告のルール</strong>患者さんの体験談・口コミ、説明のないビフォーアフター写真、「痛くない」「無痛」「地域No.1」「最新」といった言い切り、費用を強調する表現がないことを確認しました。診療科名は「歯科・小児歯科」だけで、「予防歯科」は内容として書いています。</li>
+          <li><strong>自由診療の書き方</strong>ホワイトニングの内容・回数・期間・費用・主なリスクと副作用・問い合わせ先は、患者さんが自分で見に来るLPの中だけに、同じ大きさでそろえて載せました。チラシ・バナーにはホワイトニングを載せていません。</li>
+          <li><strong>全体の統一感</strong>地の色・木漏れ日を使う2か所・見出しの組み方・ローズの下線の場所・塗りのボタンは予約だけ、というルールをひとつにまとめ、LP・バナー・チラシのすべてで同じかを確認しました。</li>
+          <li><strong>写真</strong>口の中・治療中・器具・血・患者さんの顔・真っ白な歯の笑顔のアップ・実在の医院に見える写真は使っていません。葉の影の写真は、壁の小さな傷を画像処理で消してから使っています。歯ブラシの写真は、ガラス瓶と歯ブラシ2本を写真から切り抜き（背景を消す画像処理）、地の上に置きました。写真を使った画像には、すべて「写真はイメージです」と入れています。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 次の作品・相談 ===== -->
+    <section class="case-next">
+      <div class="container">
+        <a class="case-next__link" href="../nanayu/">
+          <span class="case-next__label">次の解説</span>
+          <span class="case-next__title">健康センター「なな湯」のLP・チラシ・Instagram</span>
+        </a>
+        <a class="case-next__back" href="../../#works">制作実績の一覧に戻る</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <p class="heading__en heading__en--light">Contact</p>
+        <h2 class="contact__title">医院の案内ページや販促物を<br class="sp-only">相談したい方へ</h2>
+        <p class="contact__text">「まだ何も決まっていない」段階でも、<br class="sp-only">大丈夫です。<br>ご相談・お見積りは無料です。</p>
+        <div class="contact__buttons">
+          <a class="btn btn--line btn--lg" href="https://lin.ee/WGGFmbW" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-line"/></svg>LINEで相談する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="brand brand--footer">Shimapon Works</p>
+      <small>&copy; Shimapon Works</small>
+    </div>
+  </footer>
+  <script src="../../js/main.js?v=20261012" defer></script>
+</body>
+</html>

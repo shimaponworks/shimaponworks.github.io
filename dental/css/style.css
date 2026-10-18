@@ -1,0 +1,229 @@
+/* こもれび歯科 定期健診のご案内（ポートフォリオ用・架空）
+   全体の統一ルールは CLAUDE.md の「全体の統一ルール」。色は下の変数だけを使う */
+:root {
+  --color-bg: #fef9f8;        /* 地：ごく薄いピンク（全セクション共通） */
+  --color-ink: #3d302a;       /* 文字：暖かい墨 */
+  --color-sub: #6b5d55;       /* 補助の文字 */
+  --color-rose: #d98892;      /* ローズ：下線（2か所）とロゴの円だけ */
+  --color-line: rgba(61, 48, 42, .16);
+  --color-on-ink: #ffffff;    /* 墨のボタンの上の文字 */
+  --color-photo-note: rgba(255, 255, 255, .85);
+
+  --font-body: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+  --font-head: "Zen Maru Gothic", var(--font-body);
+
+  --space-section: clamp(4.5rem, 10vw, 7.5rem);
+  --space-tight: clamp(3.5rem, 7vw, 5rem);
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+  --max: 72rem;
+  --fv-bleed: 0rem;           /* FVの写真が次のセクションにかかる量（スマホは写真が全幅なので0、1024px〜で 4.5rem） */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-ink);
+  font-family: var(--font-body); font-weight: 500; font-size: 1rem; line-height: 1.8;
+  word-break: auto-phrase; overflow-wrap: anywhere;
+}
+h1, h2, p, dl, dd, ol, figure { margin: 0; }
+ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+.u-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ===== ロゴ（光の円＋葉） ===== */
+.logo { flex: none; }
+.logo__sun { fill: var(--color-rose); }
+.logo__leaf { fill: var(--color-ink); }
+.logo__vein { fill: none; stroke: var(--color-bg); stroke-width: 1.1; }
+
+/* ===== ボタン：塗りの面は予約ボタンだけ ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0 1.4rem;
+  font-weight: 700; font-size: 1rem; line-height: 1.3; text-decoration: none; white-space: nowrap; border-radius: 3px;
+  transition: opacity .2s;
+}
+.btn:hover { opacity: .85; }
+.btn--primary { background: var(--color-ink); color: var(--color-on-ink); }
+.btn--ghost { border: 1.5px solid var(--color-ink); color: var(--color-ink); background: rgba(254, 249, 248, .7); }
+.btn--small { min-height: 2.5rem; padding: 0 .9rem; font-size: .875rem; }
+.btn--wide { width: 100%; }
+
+/* ===== 見出し（全セクション同じ型：小さなラベル＋丸ゴシックの見出し、左ぞろえ） ===== */
+.label { font-size: .8125rem; color: var(--color-sub); letter-spacing: .08em; }
+.section__title {
+  margin-top: .6rem; font-family: var(--font-head); font-weight: 700; font-size: clamp(1.5rem, 5.4vw, 2.25rem);
+  line-height: 1.45; letter-spacing: -.02em;
+}
+.section__lead { margin-top: 1.1rem; max-width: 36em; }
+.note { margin-top: .9rem; font-size: .8125rem; color: var(--color-sub); line-height: 1.7; }
+/* ローズの下線：h1 の「守る。」と「削りません。」の2か所だけ */
+/* 文節で改行させる／途中で切らない */
+.nb { display: inline-block; }
+/* 医院からもらう数字の枠（作例では数字を作らない） */
+.fill { font-weight: 700; white-space: nowrap; }
+.mark { font-style: normal; background: linear-gradient(transparent 80%, var(--color-rose) 80%, var(--color-rose) 93%, transparent 93%); }
+
+/* ===== 写真：同じ色味、右下に「写真はイメージです」 ===== */
+.photo { position: relative; }
+.photo img { width: 100%; object-fit: cover; }
+/* 切り抜きの写真（透過）：枠いっぱいに切らず、形のまま置く。元の画質より大きくしない（ぼやけないように） */
+.photo--cut img { object-fit: contain; max-width: var(--cut-w, 100%); margin-inline: auto; }
+.fv__photo.photo--cut img { --cut-w: 900px; aspect-ratio: 1 / 1; max-height: 1087px; object-position: center 70%; }
+.checkup__photo.photo--cut img { --cut-w: 753px; aspect-ratio: auto; height: auto; }
+.photo__note {
+  position: absolute; right: .5rem; bottom: .5rem; padding: .1rem .45rem;
+  font-size: .6875rem; line-height: 1.6; color: var(--color-sub); background: var(--color-photo-note);
+}
+
+/* ===== 木漏れ日（FVと予約の2か所だけ）：葉の影＋葉のすき間の光（写真の明るい所だけをローズにした層） ===== */
+.komorebi { position: relative; isolation: isolate; overflow: hidden; }
+.komorebi::before, .komorebi::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.komorebi::before {
+  background: url(../images/komorebi-shadow.webp) center 78% / cover no-repeat;
+  mix-blend-mode: multiply; filter: sepia(.25) hue-rotate(-28deg) saturate(1.2); opacity: .3;
+}
+.komorebi::after {
+  background: url(../images/komorebi-light.webp) center 78% / cover no-repeat; opacity: .35;
+  -webkit-mask-image: radial-gradient(ellipse 70% 62% at 24% 42%, #000 35%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 62% at 24% 42%, #000 35%, transparent 80%);
+}
+
+/* ===== ヘッダー ===== */
+.header { position: absolute; top: 0; left: 0; right: 0; z-index: 10; }
+.header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: var(--max); margin: 0 auto; padding: .9rem var(--gutter); }
+.header__brand { display: flex; align-items: center; gap: .5rem; text-decoration: none; min-width: 0; }
+.header__name { font-family: var(--font-head); font-weight: 700; font-size: 1.125rem; letter-spacing: .04em; white-space: nowrap; }
+.header__dept { display: none; font-size: .75rem; color: var(--color-sub); white-space: nowrap; }
+
+/* ===== ファーストビュー ===== */
+.fv { padding-top: 5.5rem; }
+.fv__body { padding: 1.5rem var(--gutter) 2.5rem; }
+.fv__title {
+  margin-top: .9rem; font-family: var(--font-head); font-weight: 700; font-size: clamp(2.1rem, 10vw, 4.5rem);
+  line-height: 1.3; letter-spacing: -.03em;
+}
+.fv__line { display: block; }
+.fv__sub { margin-top: 1.2rem; font-weight: 700; font-size: clamp(1rem, 4.2vw, 1.2rem); line-height: 1.7; }
+.fv__facts { margin-top: 1rem; font-size: .9375rem; color: var(--color-sub); max-width: 30em; }
+.fv__facts b { color: var(--color-ink); }
+.fv__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.fv__access { margin-top: 1rem; font-size: .8125rem; color: var(--color-sub); }
+.fv__photo img { aspect-ratio: 4 / 3; object-position: center 62%; }
+/* 重ね・はみ出しは1か所だけ：FVの写真の下端を、次のセクションの上の余白に少しかける（社長「仕上げあり」・点検①） */
+.fv { overflow: visible; }
+.fv__photo { margin-bottom: calc(var(--fv-bleed) * -1); }
+.checkup { padding-top: calc(var(--space-section) + var(--fv-bleed)); }
+
+/* ===== 健診の日にすること ===== */
+.section { padding: var(--space-section) 0; }
+.section--tight { padding: var(--space-tight) 0; }
+.section__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.checkup__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+.steps { margin-top: 2rem; border-top: 1px solid var(--color-line); }
+.steps__item { display: grid; gap: .2rem; padding: 1rem 0; border-bottom: 1px solid var(--color-line); }
+.steps__name { font-weight: 700; font-size: 1.0625rem; }
+.steps__desc { font-size: .9375rem; color: var(--color-sub); }
+.checkup__time { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 1.25rem; margin-top: 2.25rem; }
+.checkup__num { font-family: var(--font-head); font-weight: 700; font-size: 1.25rem; line-height: 1; white-space: nowrap; }
+.checkup__num b { font-size: 4rem; letter-spacing: -.04em; margin: 0 .1em; }
+.checkup__numtext { font-size: .9375rem; }
+/* 健診の日：写真なし。3つの項目と「約45分」が主役（写真は最初の画面の1枚だけ） */
+.checkup__aside { border-top: 1.5px solid var(--color-ink); border-bottom: 1px solid var(--color-line); padding: 1.5rem 0; }
+.checkup__aside .checkup__time { margin-top: 0; }
+
+/* ===== 定義リスト（子ども・場所・ホワイトニングで共通） ===== */
+.rows { margin-top: 1.75rem; border-top: 1px solid var(--color-line); }
+.rows__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: .25rem; padding: 1rem 0; border-bottom: 1px solid var(--color-line); }
+.rows dt { font-weight: 700; }
+.rows dd { font-size: .9375rem; }
+/* ホワイトニング：費用・内容・回数・リスク・問い合わせ先を同じ大きさで */
+.rows--even dt, .rows--even dd { font-size: 1rem; }
+
+/* ===== 院長より ===== */
+.message__inner { max-width: 46rem; }
+.message__body { margin-top: 1.5rem; display: grid; gap: 1.1rem; }
+.message__sign { margin-top: 1.5rem; text-align: right; font-weight: 700; }
+/* 院長あいさつ：JS が動くときだけ、最初の3行ほどを見せて残りを畳む（全文は HTML にあり、読み上げでも読める）。JS がないときは全文 */
+.message__body.is-folded { max-height: 5.6em; overflow: hidden; -webkit-mask-image: linear-gradient(#000 35%, transparent); mask-image: linear-gradient(#000 35%, transparent); }
+.message__more {
+  display: inline-flex; align-items: center; gap: .4em; margin-top: .9rem; min-height: 2.75rem; padding: 0 .1rem;
+  font: inherit; font-weight: 700; font-size: .9375rem; color: var(--color-ink); background: none; border: 0; border-bottom: 1.5px solid var(--color-ink); cursor: pointer;
+}
+.message__more[hidden] { display: none; }
+.message__more::after { content: ""; width: .45em; height: .45em; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-.15em) rotate(45deg); }
+.message__more[aria-expanded="true"]::after { transform: translateY(.1em) rotate(-135deg); }
+.message__more:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+
+/* ===== 場所と診療時間 ===== */
+.access__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.25rem; }
+.hours { width: 100%; border-collapse: collapse; font-size: .9375rem; text-align: center; border-top: 1.5px solid var(--color-ink); border-bottom: 1.5px solid var(--color-ink); }
+.hours__caption { text-align: left; font-weight: 700; padding-bottom: .6rem; }
+.hours th, .hours td { padding: .7rem .15rem; border-bottom: 1px solid var(--color-line); }
+.hours thead th { font-weight: 700; font-size: .8125rem; }
+.hours tbody th { text-align: left; font-weight: 700; white-space: nowrap; font-size: .8125rem; }
+.hours .is-off { color: var(--color-sub); }
+
+/* ===== 予約 ===== */
+.reserve__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+.reserve__tel { margin-top: 1.75rem; display: flex; align-items: baseline; gap: .75rem; }
+.reserve__tellabel { font-size: .875rem; color: var(--color-sub); }
+.reserve__tel a { font-family: var(--font-head); font-weight: 700; font-size: clamp(1.75rem, 8vw, 2.5rem); letter-spacing: .02em; text-decoration: none; }
+.form { display: grid; gap: 1.1rem; }
+.form__row { display: grid; gap: .35rem; }
+.form label { font-weight: 700; font-size: .9375rem; }
+.form input, .form select {
+  width: 100%; min-height: 3rem; padding: .5rem .8rem; font: inherit; color: var(--color-ink);
+  background: #fff; border: 1px solid rgba(61, 48, 42, .45); border-radius: 3px;
+}
+.form .btn { margin-top: .5rem; }
+
+/* ===== フッター ===== */
+.footer { border-top: 1px solid var(--color-line); padding: 2.5rem 0 7rem; font-size: .8125rem; color: var(--color-sub); }
+.footer__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: grid; gap: .4rem; }
+.footer__name { font-weight: 700; color: var(--color-ink); font-size: .9375rem; }
+
+/* ===== スマホの追従ボタン ===== */
+.fixed-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: grid; grid-template-columns: 1.4fr 1fr; gap: .5rem;
+  padding: .6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom)); background: rgba(254, 249, 248, .96); border-top: 1px solid var(--color-line);
+  transform: translateY(110%); transition: transform .25s;
+}
+.fixed-bar.is-show { transform: none; }
+.fixed-bar .btn { min-height: 3rem; padding: 0 .6rem; font-size: .9375rem; }
+.toast {
+  position: fixed; left: 50%; bottom: 5.5rem; z-index: 30; transform: translate(-50%, 1rem); opacity: 0; pointer-events: none;
+  width: min(90vw, 26rem); padding: .8rem 1rem; background: var(--color-ink); color: var(--color-on-ink); font-size: .875rem; border-radius: 3px; transition: opacity .2s, transform .2s;
+}
+.toast.is-show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ===== 768px〜 ===== */
+@media (min-width: 768px) {
+  .header__dept { display: inline; }
+  .rows__row { grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem; }
+}
+
+/* ===== 1024px〜 ===== */
+@media (min-width: 1024px) {
+  .fv { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: end; padding-top: 0; min-height: 44rem; }
+  .fv__body { padding: 9rem 0 7.5rem max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); }
+  .fv__title { font-size: clamp(3.4rem, 5.2vw, 4.5rem); }
+  .fv__photo { align-self: stretch; margin-top: 6.5rem; }
+  :root { --fv-bleed: 0rem; } /* 切り抜きの写真にしたので、次のセクションにはかけない（歯ブラシの先がのぞかないように） */
+  .fv__photo img { height: 100%; aspect-ratio: auto; object-position: center 55%; }
+  .fv__photo.photo--cut { margin-top: 5rem; padding-bottom: 2rem; }
+  .fv__photo.photo--cut img { aspect-ratio: auto; height: 100%; object-position: center 60%; }
+  .checkup__grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 5rem; align-items: start; }
+  .checkup__aside { margin-top: 6.2rem; padding: 2.5rem 0; }
+  .checkup__aside .checkup__time { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .checkup__aside .checkup__num { font-size: 1.75rem; }
+  .checkup__aside .checkup__num b { font-size: 7.5rem; }
+  .access__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem 4.5rem; align-items: start; }
+  .reserve__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5rem; align-items: start; }
+  .fixed-bar { display: none; }
+  .footer { padding-bottom: 3rem; }
+}
