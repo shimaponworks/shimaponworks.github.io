@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>制作の解説：クリニックの看護師採用セット（採用LP・求人バナー・募集チラシ）｜Shimapon Works</title>
+  <meta name="description" content="「ブランクが不安で、面接の前に辞退されてしまう」という内科クリニックの想定の依頼に、採用LP・求人バナー3案・院内掲示用のチラシで答えた作例です。依頼文から、決めたこと、作ったものまでを順に解説します。">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="制作の解説：クリニックの看護師採用セット（採用LP・求人バナー・募集チラシ）｜Shimapon Works">
+  <meta property="og:description" content="ブランクのある看護師に「日勤だけで戻れる」を伝える、採用LP・求人バナー3案・募集チラシ。想定の依頼文に答えて作った作例です。">
+  <link rel="canonical" href="https://shimaponworks.github.io/works/nurse/">
+  <meta property="og:url" content="https://shimaponworks.github.io/works/nurse/">
+  <meta property="og:image" content="https://shimaponworks.github.io/works/nurse/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20261015a">
+  <style>
+    /* このページだけ：画面は描いた枠に入れず、細い線1本で置く（Lumio の解説ページと同じ） */
+    .plain-hero { display: flex; align-items: flex-end; gap: clamp(0.5rem, 2vw, 1.25rem); margin: 2rem auto 0; max-width: 1000px; }
+    .plain-hero figure { flex: var(--r) 1 0; min-width: 0; margin: 0; }
+    .plain img, .plain-hero img { width: 100%; outline: 1px solid var(--line); outline-offset: -1px; background: #fff; }
+    .plain-hero figcaption, .plain figcaption { margin-top: 0.375rem; font-size: 0.75rem; line-height: 1.5; color: var(--text-sub); }
+    .shot__img.plain { padding: 0; border-radius: 0; background: none; box-shadow: none; }
+    .shot__img.plain img { border-radius: 0; }
+
+    /* 依頼文の引用：本文より一段小さく、左に線1本 */
+    .brief { margin-top: 1.5rem; padding-left: 1rem; border-left: 2px solid var(--line); color: var(--text-sub); font-size: 0.9375rem; }
+    .brief p + p { margin-top: 0.5rem; }
+    .brief__title { font-weight: 700; color: var(--navy); }
+
+    /* 販促物：媒体ごとに、画像と「課題・意図・工夫」 */
+    .kit { display: grid; gap: 3.5rem; }
+    .kit__item { display: grid; gap: 1.5rem; align-items: start; }
+    .kit__media { display: grid; gap: 0.75rem; align-items: start; }
+    .kit__banners { display: grid; gap: 1rem; }
+    .kit__banner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.911fr); gap: 0.5rem; align-items: start; margin: 0; }
+    .kit__banner figcaption { grid-column: 1 / -1; }
+    .kit__media a { display: block; }
+    .kit__media--flyer { max-width: 24rem; }
+    .kit h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.6; color: var(--navy); }
+    .kit__size { margin-top: 0.25rem; font-size: 0.8125rem; color: var(--text-sub); }
+    .kit__cia { margin-top: 1rem; display: grid; gap: 0.625rem; }
+    .kit__cia div { display: grid; grid-template-columns: 3.5em 1fr; gap: 0.75rem; }
+    .kit__cia dt { font-weight: 700; color: var(--blue-dark); }
+    .kit__cia dd { margin: 0; color: var(--text-sub); }
+    @media (min-width: 1024px) {
+      .kit__item { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2.5rem; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-line" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8.1-6C21.6 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../../">Shimapon Works</a>
+      <nav aria-label="メニュー">
+        <ul class="nav">
+          <li><a href="../../#works">実績</a></li>
+          <li><a href="../../#price">料金</a></li>
+          <li><a href="../../#faq">質問</a></li>
+          <li><a class="nav__cta" href="#contact">相談する</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== タイトル ===== -->
+    <section class="case-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="現在の位置">
+          <ol>
+            <li><a href="../../">トップ</a></li>
+            <li><a href="../../#works">制作実績</a></li>
+            <li aria-current="page">看護師採用セット</li>
+          </ol>
+        </nav>
+        <p class="case-hero__tag">制作の解説｜採用LP・求人バナー・チラシ・クリニック</p>
+        <h1 class="case-hero__title"><span>クリニックの</span><span>看護師採用セット</span></h1>
+        <p class="case-hero__lead">「ブランクが不安で、面接の前に辞退されてしまう」という想定の依頼に、<br class="pc-only">採用LP・求人バナー3案・院内に貼るチラシで答えました。</p>
+        <div class="plain-hero">
+          <figure style="--r: 1.6"><img src="images/hero-pc.webp" width="1000" height="625" alt="採用LPのファーストビューを、パソコンで表示したところ。左に「手は、覚えている。」の見出しと勤務時間・夜勤・給与、右に手袋をした手元の写真" fetchpriority="high"><figcaption>LP（PC）</figcaption></figure>
+          <figure style="--r: 0.707"><img src="images/flyer.webp" width="800" height="1131" alt="A4縦の看護師募集チラシ" fetchpriority="high"><figcaption>チラシ</figcaption></figure>
+          <figure style="--r: 0.462"><img src="images/hero-sp.webp" width="400" height="866" alt="採用LPを、スマホで表示したところ" fetchpriority="high"><figcaption>LP（スマホ）</figcaption></figure>
+        </div>
+        <dl class="case-meta">
+          <div><dt>業種</dt><dd>内科クリニック（看護師の採用）</dd></div>
+          <div><dt>制作物</dt><dd>採用LP、求人バナー3案（1080×1080・1200×628）、院内掲示用の募集チラシ（A4片面）</dd></div>
+          <div><dt>担当範囲</dt><dd>キャッチコピー・構成・文章・デザイン・コーディング・写真選び・印刷用データ</dd></div>
+          <div><dt>使ったもの</dt><dd>HTML / CSS / JavaScript（バナーとチラシもHTML/CSSで組んで書き出し）</dd></div>
+        </dl>
+        <p class="case-note">※実際の募集の形をまねた架空の依頼をもとに、練習として制作したサンプルです。クリニック名・住所・電話番号・URL・給与などの条件はすべて架空です。<br>※写真は素材サイト（Unsplash）のイメージです。実際のスタッフや院内の写真ではありません。</p>
+        <a class="btn btn--outline-dark" href="https://shimaponworks.github.io/nurse/" target="_blank" rel="noopener">完成したLPを見る</a>
+      </div>
+    </section>
+
+    <!-- ===== 依頼文（課題） ===== -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Brief</p>
+          <h2 class="heading__ja">想定した依頼</h2>
+        </div>
+        <ul class="request">
+          <li><span>依頼主</span>住宅地にある内科クリニック（医師1名・看護師3名）。看護師の退職にあわせて、日勤の常勤1名・パート1名を募集したい</li>
+          <li><span>困りごと</span>求人サイトに出して2か月で応募は2件。どちらも「ブランクがあるので不安」と面接の前に辞退された。求人票の欄が決まっていて、「採血や点滴を一緒に練習できる」といった事情を書ききれない</li>
+          <li><span>誰に</span>出産・子育て・介護などで現場を離れている看護師、夜勤のない日勤の仕事を探している看護師（年齢・性別は限らない）</li>
+          <li><span>作るもの</span>求人票から飛べる採用LP、求人バナー2サイズ、院内に貼り近くの薬局にも置くA4のチラシ。3つとも同じデザインで</li>
+        </ul>
+        <div class="brief">
+          <p class="brief__title">依頼の中の、ちょっと困った要望</p>
+          <p>「院長のメッセージ600字と、全部の条件を最初の画面に入れたい」「30代くらいまでの女性に来てほしい」「残業ほぼゼロ、地域No.1の働きやすさと書きたい」</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 決めたこと ===== -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Decision</p>
+          <h2 class="heading__ja">決めたこと</h2>
+        </div>
+        <ol class="thinking">
+          <li>
+            <h3>伝えたいことは、ひとつ。「ブランクがあっても、日勤だけで戻れる」</h3>
+            <p>辞退の理由は、夜勤ではなくブランクの不安でした。そこで最初に消す不安をブランクに決め、<strong>入職後の最初の1か月</strong>に何があるかを、いちばん具体的に書くことにしました。</p>
+          </li>
+          <li>
+            <h3>コピーは「手は、覚えている。気持ちが追いつくまで、となりで。」</h3>
+            <p>現場を離れていても、手技は手が覚えていることが多い。それでも緊張するのは当然なので、<strong>最初の1か月は先輩がとなりで採血・点滴を一緒に行う</strong>——依頼文にあるこの条件を、コピーの根拠として本文に必ず添えています。バナーでは、働き方（「夜は、家で過ごす看護師に。」）と職場の空気（「待合室の『こんにちは』から始まる仕事。」）の案も作りました。</p>
+          </li>
+          <li>
+            <h3>色は、白と墨に「朝日の朱」を少しだけ</h3>
+            <p>病院らしい青一色やピンクのハートは、依頼のNGでした。クリニックの名前の「あさひ」と、日勤で出勤する朝の時間から、<strong>朝日の朱</strong>を差し色にしています。その朱をごく淡くした地は、「入職後の流れ」と「見学・応募」の<strong>“となりにいる”所だけ</strong>に使い、LP・バナー・チラシで同じ使い方にそろえました。</p>
+          </li>
+          <li>
+            <h3>困った要望には、できる形で答える</h3>
+            <p>最初の画面は「ブランクのある、日勤希望の看護師」ひとつにしぼり、院長のメッセージは一文だけを引用して全文は下の段に、条件は勤務時間・夜勤なし・給与の3つだけを上に出しました。年齢・性別を限る書き方は求人ではできないため、「ブランクのある方」「子育てや介護など、それぞれの事情」と<strong>状況で</strong>書いています。残業の実績の数字はないため、「18:15終業・夜診なし」という事実だけを書きました。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== LPで工夫したこと ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="heading">
+          <p class="heading__en">Design</p>
+          <h2 class="heading__ja">LPで工夫したこと</h2>
+          <p class="heading__lead">スマホで見たときの画面です。</p>
+        </div>
+        <ul class="points-grid">
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/fv.webp" width="640" height="1024" alt="ファーストビュー：「手は、覚えている。気持ちが追いつくまで、となりで。」の見出しと、勤務・夜勤・給与の3行、見学のボタン" loading="lazy"></figure>
+            <h3>最初の画面は、言葉と3つの条件だけ</h3>
+            <p>大きな言葉のすぐ下に、勤務時間・夜勤なし・給与の3行。全部の条件は下の募集要項にまとめ、最初の画面では迷わせないようにしました。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/flow.webp" width="640" height="1024" alt="入職後の流れ：見学、面接、入職から1か月、1か月のあと。縦の線が2本並び、入職から1か月の間だけ朱の線が並ぶ" loading="lazy"></figure>
+            <h3>「となりで」を、2本の線で見せる</h3>
+            <p>墨の線が「あなた」、朱の線が「先輩」。朱の線は入職から1か月の間だけ並んで走り、そこで終わります。ページの背骨になる部分なので、余白もここだけ大きくとっています。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/hours.webp" width="640" height="1024" alt="働く時間：「夜は、家で過ごす看護師に。」の見出しと、曜日と午前・午後の●と／の表" loading="lazy"></figure>
+            <h3>勤務時間は、診療時間表の形で</h3>
+            <p>クリニックの入口に貼ってある、曜日と午前・午後の表と同じ形にしました。木曜・土曜の午後と日曜がお休みであることが、文章を読まなくてもわかります。</p>
+          </li>
+          <li class="shot">
+            <figure class="shot__img plain"><img src="images/terms.webp" width="640" height="1024" alt="募集要項：職種・雇用形態・応募資格・仕事の内容・就業場所・勤務時間などの一覧" loading="lazy"></figure>
+            <h3>条件は、省かずにすべて</h3>
+            <p>雇用形態・仕事の内容・就業場所と変更の範囲・勤務時間・時間外労働・休日・給与・試用期間・社会保険・受動喫煙対策・応募方法まで、求人で示す条件をひとつの表にまとめました。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== バナー・チラシ ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="heading">
+          <p class="heading__en">Promotion</p>
+          <h2 class="heading__ja">バナーとチラシも、同じルールで</h2>
+          <p class="heading__lead">地の色・見出しの組み方・線の使い方・写真の色味を、LPと同じルールでそろえました。<br class="pc-only">画像を押すと、大きく表示します。</p>
+        </div>
+        <div class="kit">
+
+          <article class="kit__item">
+            <div class="kit__banners plain">
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-1-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-1-sq.webp" width="800" height="800" alt="バナー案1（正方形）：上に手袋の手元の写真、下に2本の線と「手は、覚えている。思い出すまで、となりで。」" loading="lazy"></a>
+                <a href="images/banner-1-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-1-wide.webp" width="800" height="419" alt="バナー案1（横長）：左に2本の線と言葉、右に手元の写真" loading="lazy"></a>
+                <figcaption>案1　ブランクの不安から入る</figcaption>
+              </figure>
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-2-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-2-sq.webp" width="800" height="800" alt="バナー案2（正方形）：大きな文字で「夜は、家で過ごす看護師に。」と、曜日と午前・午後の勤務の表" loading="lazy"></a>
+                <a href="images/banner-2-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-2-wide.webp" width="800" height="419" alt="バナー案2（横長）：左に「夜は、家で過ごす看護師に。」、右に勤務の表" loading="lazy"></a>
+                <figcaption>案2　働き方で伝える</figcaption>
+              </figure>
+              <figure class="kit__banner kit__media">
+                <a href="images/banner-3-sq-large.webp" target="_blank" rel="noopener"><img src="images/banner-3-sq.webp" width="800" height="800" alt="バナー案3（正方形）：上に人のいない明るい待合室の写真、下に「待合室の『こんにちは』から始まる仕事。」" loading="lazy"></a>
+                <a href="images/banner-3-wide-large.webp" target="_blank" rel="noopener"><img src="images/banner-3-wide.webp" width="800" height="419" alt="バナー案3（横長）：上に待合室の写真、下に言葉" loading="lazy"></a>
+                <figcaption>案3　職場の空気で伝える（3案とも 1080×1080 と 1200×628）</figcaption>
+              </figure>
+            </div>
+            <div>
+              <h3>求人バナー（伝え方の違う3案）</h3>
+              <p class="kit__size">1080×1080（Instagram・求人サイトのサムネイル）と 1200×628（Web広告）</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>求人サイトや広告では、たくさんの求人と並んで一瞬で見比べられる</dd></div>
+                <div><dt>意図</dt><dd>ブランク・働き方・職場の空気と入口を変えた3案を作り、反応を比べられるようにしました</dd></div>
+                <div><dt>工夫</dt><dd>構図も変えています（2本の線と写真／文字と勤務の表／上に写真）。下の淡い朱の帯には、3案とも同じ条件の抜粋と「見学のみも受付」を置き、どの案でも同じクリニックだとわかるようにしました</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="kit__item">
+            <div class="kit__media kit__media--flyer plain">
+              <a href="images/flyer-large.webp" target="_blank" rel="noopener"><img src="images/flyer.webp" width="800" height="1131" alt="A4縦の看護師募集チラシ。上に「手は、覚えている。」と手元の写真、中段に横向きの入職後の流れ、下に勤務の表と募集要項、いちばん下に電話番号" loading="lazy"></a>
+            </div>
+            <div>
+              <h3>院内に貼る募集チラシ</h3>
+              <p class="kit__size">A4縦・片面／塗り足し3mmとトンボ付きのPDF</p>
+              <dl class="kit__cia">
+                <div><dt>課題</dt><dd>院内の掲示と近くの薬局に置くチラシにも、求人で示す条件を省かずに入れる</dd></div>
+                <div><dt>意図</dt><dd>上半分はLPと同じ言葉と写真で目を止め、下半分で条件と見学の申し込み方を読んでもらう</dd></div>
+                <div><dt>工夫</dt><dd>LPの縦の流れを、チラシでは横向きの2本の線に組み替えました。条件が多いぶん文字は小さくなりますが、いちばん小さい文字も8pt以上、紙の端から9mm以上内側に置いています</dd></div>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 確認したこと ===== -->
+    <section class="section section--alt">
+      <div class="container container--narrow">
+        <div class="heading">
+          <p class="heading__en">Check</p>
+          <h2 class="heading__ja">確認したこと</h2>
+        </div>
+        <ul class="check-list">
+          <li><strong>求人のルール</strong>性別や年齢を限る言葉（「看護婦」「女性歓迎」「若い方」など）がないこと、「残業ゼロ」「必ず定時」「No.1」など根拠のない言い切りがないことを確認しました。架空のスタッフの声や体験談は載せていません。</li>
+          <li><strong>条件をそろえる</strong>勤務時間・休日・給与・「最初の1か月は先輩がとなりで」は、LP・バナー・チラシで同じ内容です。依頼主から数字をもらっていない年間休日数は、数字を作らず「求人票に記載」としました。</li>
+          <li><strong>全体の統一感</strong>淡い朱の地・見出しの組み方・線の太さ・朱を使う場所・写真の色味を、ひとつのルールにまとめ、LPとバナー・チラシのすべてで同じかを確認しました。</li>
+          <li><strong>写真</strong>患者さんの顔や、病院名・名札・機器の銘柄の文字が写っていないことを確認し、写っていた小さな文字はぼかしました。写真を使った画像には、すべて「写真はイメージです」と入れています。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 次の作品・相談 ===== -->
+    <section class="case-next">
+      <div class="container">
+        <a class="case-next__link" href="../nanayu/">
+          <span class="case-next__label">次の解説</span>
+          <span class="case-next__title">健康センター「なな湯」のLP・チラシ・Instagram</span>
+        </a>
+        <a class="case-next__back" href="../../#works">制作実績の一覧に戻る</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <p class="heading__en heading__en--light">Contact</p>
+        <h2 class="contact__title">採用ページや求人の販促物を<br class="sp-only">相談したい方へ</h2>
+        <p class="contact__text">「まだ何も決まっていない」段階でも、<br class="sp-only">大丈夫です。<br>ご相談・お見積りは無料です。</p>
+        <div class="contact__buttons">
+          <a class="btn btn--line btn--lg" href="https://lin.ee/WGGFmbW" target="_blank" rel="noopener"><svg class="btn__icon" aria-hidden="true"><use href="#i-line"/></svg>LINEで相談する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="brand brand--footer">Shimapon Works</p>
+      <small>&copy; Shimapon Works</small>
+    </div>
+  </footer>
+  <script src="../../js/main.js?v=20261012" defer></script>
+</body>
+</html>
