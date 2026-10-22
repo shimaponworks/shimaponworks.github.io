@@ -201,16 +201,14 @@ a { color: inherit; text-decoration: none; }
 .skills h3 { font-size: 1.0625rem; font-weight: 700; color: var(--navy); }
 .skills p { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--text-sub); }
 .skills a { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
-/* 5項目：タブレットは2列（最後は横いっぱい）、PCは上3つ・下2つ */
+/* 6項目（10/22 データ入力を追加）：タブレットは2列×3段、PCは3列×2段 */
 @media (min-width: 768px) {
   .skills { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .skills li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 @media (min-width: 1024px) {
-  .skills { grid-template-columns: repeat(6, 1fr); }
-  .skills li { grid-column: span 2; }
-  .skills li:nth-child(n + 4) { grid-column: span 3; }
-  .skills li:last-child:nth-child(odd) { grid-column: span 3; }
+  .skills { grid-template-columns: repeat(3, 1fr); }
+  .skills li:last-child:nth-child(odd) { grid-column: auto; }
 }
 
 /* 料金の目安 */
