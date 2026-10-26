@@ -249,6 +249,9 @@
       .screens { grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); }
     }
 
+    /* 作品の最初に .pair を置くとき（はけめ塗装店） */
+    .work__media > .pair:first-child { margin-top: 0; }
+
     /* ポスター */
     .poster { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
 
@@ -386,6 +389,7 @@
           <li><a href="#lumio"><span class="index__work">美容サロンのLP・チラシ・バナー・SNS画像</span><span class="index__kind">Web＋印刷＋バナー＋SNS</span></a></li>
           <li><a href="#cafe"><span class="index__work">カフェの季節のフェアのチラシ</span><span class="index__kind">印刷 A4</span></a></li>
           <li><a href="#juku"><span class="index__work">学習塾の夏期講習のチラシ</span><span class="index__kind">印刷 A4</span></a></li>
+          <li><a href="#hakeme"><span class="index__work">外壁塗装店のポスティング用チラシ</span><span class="index__kind">印刷 A4両面</span></a></li>
           <li><a href="#clocca"><span class="index__work">勤怠管理サービスのLP・広告バナー・展示会チラシ</span><span class="index__kind">Web＋バナー＋印刷</span></a></li>
           <li><a href="#rocknsoda"><span class="index__work">喫茶店のLP・ライブ告知バナー</span><span class="index__kind">Web＋バナー</span></a></li>
           <li><a href="#sumicle"><span class="index__work">コンタクトレンズの商品ページ</span><span class="index__kind">楽天市場用の画像</span></a></li>
@@ -653,6 +657,39 @@
           <figure class="shot">
             <a class="shot__link" href="images/juku-note.webp"><img src="images/juku-note.webp" width="640" height="380" alt="真ん中の付箋の拡大：見出し「部活と両立しやすい」と、中1・2は12:20、中3は14:35に終わり、高校生は午後の授業なので午前は補習や部活に使えるという説明" loading="lazy"></a>
             <figcaption>この講習のいちばんの特徴を書いた真ん中の付箋だけを少し大きくし、3枚が同じ形の横並びに見えないようにしました。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- はけめ塗装店 -->
+    <article class="work work--flip" id="hakeme" aria-labelledby="hakeme-title">
+      <div class="work__text">
+        <h2 class="work__title" id="hakeme-title">外壁塗装店の<br>ポスティング用<span class="nowrap">チラシ（A4両面）</span></h2>
+        <p class="work__name">「はけめ塗装店」春の塗り替えのチラシ（架空のお店）</p>
+        <dl class="work__spec">
+          <dt>担当</dt><dd>構成・文章・デザイン、刷毛の帯の図形、費用の目安の設定（相場を調べたうえでの架空の例）</dd>
+          <dt>使ったもの</dt><dd>HTML / CSS / SVG（紙面を組んで画像に書き出し）</dd>
+        </dl>
+        <p class="work__body">戸建てに住む50〜70代に向けて、ポスティングと新聞折込で配るA4両面のチラシです。表は興味を持ってもらう面として、塗り替えたばかりの家の写真を大きく置き、刷毛でひと塗りしたような帯に見出し「外壁の色あせ、気になってきたら。」を乗せました。その下に、色あせ・手につく白い粉・目地のすき間という塗り替えを考えはじめるきっかけと、塗料の色見本を手に取りながら色と費用の目安を聞ける、春にお店で開く塗り替えの会の案内を置いています。</p>
+        <p class="work__body">裏は決めるための情報の面です。最初の連絡から塗り終わりの確認までの6段を刷毛のひと筆の縦の線でつなぎ、費用の目安（税込・30坪2階建て・含まれるものの注記つき）・施工事例・よくある質問を並べました。訪ねてくる業者への不安に答えるため、お店の約束として「こちらからご自宅に営業に伺うことはありません」「お見積もりは書面でお渡しします」の2つを、流れの1段目と見積もりの段に1行ずつ入れています（作例のお店の設定です）。「今だけ」「放っておくと大変」のような不安をあおる・急かす言葉や、「通常◯円→◯円」のような値引き前と比べる書き方は使っていません。</p>
+        <p class="work__note">写真（家2枚）とキャラクターは画像生成AI（ChatGPT）で作成したイメージです。費用・日付・店名は架空の例で、連絡先とQRコードは仮の灰色の形にしています。</p>
+      </div>
+      <div class="work__media">
+        <div class="pair" style="--a: 1fr; --b: 1fr">
+          <figure class="shot">
+            <a class="shot__link" href="images/hakeme-front.webp"><img src="images/hakeme-front-600.webp" width="600" height="849" alt="A4縦のチラシの表面。上に店名「はけめ塗装店」と、塗り替えた淡い青灰の2階建ての家の写真。写真の下の紺の刷毛の帯に見出し「外壁の色あせ、気になってきたら。」、その下に「色あせ／手につく白い粉／目地のすき間」、からし色の帯に、春にお店で開く塗り替えの会の見出しと2027年3月27日・28日の日付、あごに手をあてる男性のイラスト、仮の灰色の連絡先とQRコード" loading="lazy"></a>
+            <figcaption>チラシ（表）。ポストから出した一瞬で、外壁塗装の店だと分かるように。</figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot__link" href="images/hakeme-back.webp"><img src="images/hakeme-back-600.webp" width="600" height="849" alt="チラシの裏面。左に、最初の連絡から塗り終わりの確認までの6段の流れを刷毛の縦の線でつなぎ、受付の女性とローラーを持つ職人のイラスト。右に施工事例のグレージュの2階建ての写真、塗料2種類の費用の目安、よくある質問2つ。下に店名と、仮の灰色の住所・地図・連絡先・QRコード" loading="lazy"></a>
+            <figcaption>チラシ（裏）。流れ・費用の目安・施工事例・よくある質問（A4両面）。</figcaption>
+          </figure>
+        </div>
+        <div class="extras">
+          <figure class="shot shot--span">
+            <a class="shot__link" href="images/hakeme-title.webp"><img src="images/hakeme-title.webp" width="640" height="380" alt="表面の見出しの拡大：家の写真の下に重なる紺の刷毛の帯と、白い文字「外壁の色あせ、気になってきたら。」。帯の右端は、不ぞろいな毛の筋とかすれになっている" loading="lazy"></a>
+            <figcaption>見出しの帯は、刷毛でひと塗りしたように右端を不ぞろいな筋とかすれにし、斜めの角度は紙面の中で1つにそろえました。</figcaption>
           </figure>
         </div>
       </div>
