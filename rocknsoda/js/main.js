@@ -116,7 +116,7 @@ document.querySelectorAll('[data-demo]').forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     if (!toast) return;
-    toast.textContent = 'ポートフォリオ用のデモサイトのため、予約はできません。';
+    toast.textContent = '見本のページのため、予約はできません。';
     toast.classList.add('is-show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('is-show'), 3000);

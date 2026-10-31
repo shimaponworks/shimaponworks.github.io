@@ -19,7 +19,7 @@
   if (form && toast) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      toast.textContent = 'ポートフォリオ用の架空のクリニックのため、送信はされません。';
+      toast.textContent = '見本のページのため、送信はされません。';
       toast.classList.add('is-show');
       clearTimeout(timer);
       timer = setTimeout(() => toast.classList.remove('is-show'), 3200);

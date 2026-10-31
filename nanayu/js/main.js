@@ -23,7 +23,7 @@
     a.addEventListener('click', (ev) => {
       ev.preventDefault();
       if (!toast) return;
-      toast.textContent = 'ポートフォリオ用の架空のページのため、LINEには移動しません。';
+      toast.textContent = '見本のページのため、LINEには移動しません。';
       toast.classList.add('is-show');
       clearTimeout(timer);
       timer = setTimeout(() => toast.classList.remove('is-show'), 3000);

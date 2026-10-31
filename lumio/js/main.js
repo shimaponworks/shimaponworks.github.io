@@ -28,7 +28,7 @@
     link.addEventListener('click', (e) => {
       e.preventDefault();
       if (!toast) return;
-      toast.textContent = 'ポートフォリオ用の架空のサロンのため、予約ページはありません。';
+      toast.textContent = '見本のページのため、予約ページはありません。';
       toast.classList.add('is-show');
       clearTimeout(timer);
       timer = setTimeout(() => toast.classList.remove('is-show'), 3200);
